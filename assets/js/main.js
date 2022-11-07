@@ -18,10 +18,10 @@ function buttonHandler() {
 
 function secondButton() {
     const namn = prompt("Ge mig namn nam nam");
-    alert("Hello "+namn);
+    alert("Hello " + namn);
 }
 
-function thirdButton(){
+function thirdButton() {
     let namn = document.querySelector("#namn").value;
     document.getElementById("namn").value = "";
     console.log(namn);
@@ -33,16 +33,23 @@ function thirdButton(){
     document.querySelector("#hello-output").innerText = `Morjens ${namn}!`;
 }
 
-function inputName(){
-    let fornamn = document.querySelector("#fornamn").value;  
+function inputName() {
+    let fornamn = document.querySelector("#fornamn").value;
     let efternamn = document.querySelector("#efternamn").value;
 
-    let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0,1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+    if (fornamn == 0 || efternamn == 0) {
+        document.getElementById("errorMsg").style.display = ''; //Displayar error
+    }
 
-    document.getElementById("website-output").style.display = ''; //Displayar webbsidan
-    document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`; 
-    document.querySelector("#username").innerText = username; 
-    document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
+    else {
+        let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
 
-    console.log(fornamn, efternamn, username);
+        document.getElementById("website-output").style.display = ''; //Displayar webbsidan
+        document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
+        document.querySelector("#username").innerText = username;
+        document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
+        document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
+
+        console.log(fornamn, efternamn, username);
+    }
 }

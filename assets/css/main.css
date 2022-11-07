@@ -34,26 +34,53 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     text-align: center;
-    background-color: rgb(172, 0, 66);
+    background-color: rgb(27, 87, 27);
     color: white;
     padding: 20px;
     width: 30%;
+    border: solid 5px black;
+    border-radius: 20px;
 }
 
 .basicBox #username {
     font-weight: bold;
     font-size: 30px;
+    color: crimson;
+
 }
 
-#name-check{
+#name-check {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 }
 
-#name-check input{
-    margin-left: auto;
-    margin-right: auto;
+#name-check input {
+    padding: 10px;
+    margin: 5px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#name-check button {
+    margin: 5px;
+    text-align: center;
+    background-color: rgb(31, 128, 31);
+    border-radius: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 15px 25px 15px 25px;
+    color: white;
+}
+
+#errorMsg {
+    margin-top: -5px;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
 }
