@@ -3,4 +3,13 @@ body {
     padding: 0;
     margin: 0;
     background-color:antiquewhite;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button {
+    background-color: gray;
+    display:block;
+    text-align: center;
+    padding: 5px;
+    
 }
