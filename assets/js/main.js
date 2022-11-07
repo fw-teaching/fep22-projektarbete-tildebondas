@@ -42,9 +42,8 @@ function inputName() {
     }
 
     else {
-        /*let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); */ //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
-
-        let username = fornamn.replace(/\s/g, '').reverse().toLowerCase() + 336; 
+        let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase();  //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+        /*let username = fornamn.replace(/\s/g, '').reverse().toLowerCase() + 336; */
         document.getElementById("website-output").style.display = ''; //Displayar webbsidan
         document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
         document.querySelector("#username").innerText = username;
