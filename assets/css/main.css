@@ -1,11 +1,26 @@
 /* Site-wide styling here */
+@font-face {
+    font-family: Minecraft;
+    src: url('../Fonts/MinecraftRegular-Bmg3.otf');
+}
+
+@font-face {
+    font-family: Minecraft;
+    font-weight: bold;
+    src: url('../Fonts/MinecraftBold-nMK1.otf');
+}
+
+
 body {
     padding: 0;
     margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
     font-size: 25px;
-    background-image: url(../images/krzysztof-hepner-aD3_Zf5tfr4-unsplash.jpg);
-    background-image: black;
+    background-image: url(../images/creeper-g7bf30bcb7_1920.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
 }
 
 .button {
@@ -28,6 +43,17 @@ body {
 }
 
 .basicBox #username {
-    font-weight: 1000;
+    font-weight: bold;
     font-size: 30px;
+}
+
+#name-check{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+#name-check input{
+    margin-left: auto;
+    margin-right: auto;
 }
