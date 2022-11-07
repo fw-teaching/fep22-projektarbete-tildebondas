@@ -2,14 +2,32 @@
 body {
     padding: 0;
     margin: 0;
-    background-color:antiquewhite;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    background-image: url(../images/krzysztof-hepner-aD3_Zf5tfr4-unsplash.jpg);
+    background-image: black;
 }
 
 .button {
     background-color: gray;
-    display:block;
+    display: block;
     text-align: center;
     padding: 5px;
-    
+}
+
+.basicBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    text-align: center;
+    background-color: rgb(172, 0, 66);
+    color: white;
+    padding: 20px;
+    width: 30%;
+}
+
+.basicBox #username {
+    font-weight: 1000;
+    font-size: 30px;
 }

@@ -2,23 +2,7 @@
 
 
 //the function that checks the age and if underage exits the site with a promt
-function ageCheck()
- {
-    let ageCheck = confirm("I confirm am older than 18?");  
 
-    if(ageCheck){
-        const money = prompt ("how much do you want to put in?")
-        
-    }
-    else{
-        alert("Underage gambling is not allowed!")
-        window.close();
-    }
-
-
-
-    
-}
 
 
 
@@ -47,4 +31,18 @@ function thirdButton(){
     }
 
     document.querySelector("#hello-output").innerText = `Morjens ${namn}!`;
+}
+
+function inputName(){
+    let fornamn = document.querySelector("#fornamn").value;  
+    let efternamn = document.querySelector("#efternamn").value;
+
+    let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0,1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+
+    document.getElementById("website-output").style.display = ''; //Displayar webbsidan
+    document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`; 
+    document.querySelector("#username").innerText = username; 
+    document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
+
+    console.log(fornamn, efternamn, username);
 }
