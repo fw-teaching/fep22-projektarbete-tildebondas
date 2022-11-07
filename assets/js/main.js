@@ -33,6 +33,10 @@ function thirdButton() {
     document.querySelector("#hello-output").innerText = `Morjens ${namn}!`;
 }
 
+/*function reverseString(str){
+    return str.split("").reverse().join("");
+}*/
+
 function inputName() {
     let fornamn = document.querySelector("#fornamn").value;
     let efternamn = document.querySelector("#efternamn").value;
@@ -42,8 +46,9 @@ function inputName() {
     }
 
     else {
-        let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase();  //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
-        /*let username = fornamn.replace(/\s/g, '').reverse().toLowerCase() + 336; */
+        let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+        /*let reverse = reverseString(fornamn);
+        let username = reverse.replace(/\s/g, '').toLowerCase() + 336;*/
         document.getElementById("website-output").style.display = ''; //Displayar webbsidan
         document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
         document.querySelector("#username").innerText = username;
