@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css"> 
+    <link rel="stylesheet" href="./assets/css/main.css">
     <script src="./assets/js/main.js"></script>
-    <title>Casino</title>
+    <title>CasinoCraft</title>
 </head>
+
 <body onload="ageCheck()">
-    
-    <script src="./assets/js/main.js"></script>
-    <a class=button href="./pages/ssp.html">Klicka på mig jee</a>
-    <button onclick="thirdButton()">Bababooye</button>
-    <input id="namn">
-    <div id="hello-output"></div>
+
+    <div class="basicBox" id="name-check">
+        <input id="fornamn" placeholder="First name">
+        <input id="efternamn" placeholder="Last name">
+        <button id="button" onclick="inputName()">ENTER</button>
+    </div>
+    <p id="errorMsg" style="display: none" class="basicBox">Fyll i båda fälten!</p>
+
+    <div style="display: none" id="website-output">
+        <div class="basicBox">
+            <p id="name-box"></p>
+            <p class="rainbow-text" id="username"></p>
+        </div>
+    </div>
 </body>
+
 </html>
