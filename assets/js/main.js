@@ -74,18 +74,36 @@ function countdown(dateEnd) {
   
   countdown(myDate);
 
+
+  //https://flexiple.com/javascript/javascript-clock/
+function theClock(){
+    let date = new Date(); 
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+
+    let time = hh + ":" + mm + ":" + ss;
+
+  document.getElementById("clock").innerText = time;
+}
+theClock();
 /*function reverseString(str){
     return str.split("").reverse().join("");
 }*/
 
+
+//Förnamn, efternamn
 function inputName() {
     let fornamn = document.querySelector("#fornamn").value;
     let efternamn = document.querySelector("#efternamn").value;
 
+
+    //Displayar error ifall ena fältet eller båda är tomt
     if (fornamn == 0 || efternamn == 0) {
         document.getElementById("errorMsg").style.display = ''; //Displayar error
     }
 
+    //Annars genereras username, sidan laddas
     else {
         let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
         /*let reverse = reverseString(fornamn);
