@@ -23,7 +23,13 @@ function money(){
 
 
 
+function timeUpdate() {
+    var select = document.getElementById('amountOfTime');
+    var option = select.options[select.selectedIndex];
 
+    document.getElementById('value').value = option.value;
+    document.getElementById('text').value = option.text;
+}
 
 
 function countdown(dateEnd) {
@@ -67,7 +73,7 @@ function countdown(dateEnd) {
     function display(hours, minutes, seconds) {}
   }
   //180 står för 3h
-  //myDate är en formel för att få den nuvarande tiden plus värdet man vill lägga till
+  //myDate är en formel för att få den nuvarande tiden plus värdet man vill lägga
   var myDate = new Date(new Date().getTime()+(180*60*1000));
   
   countdown(myDate);
