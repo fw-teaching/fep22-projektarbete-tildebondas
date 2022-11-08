@@ -19,10 +19,6 @@ function money(){
     console.log(amount);
 }
 
-
-
-
-
 function timeUpdate() {
     var select = document.getElementById('amountOfTime');
     var option = select.options[select.selectedIndex];
@@ -77,34 +73,6 @@ function countdown(dateEnd) {
   var myDate = new Date(new Date().getTime()+(180*60*1000));
   
   countdown(myDate);
-
-
-function minFunktion() {
-    console.log("Funktionen funkar");
-}
-
-minFunktion();
-
-function buttonHandler() {
-    console.log("Du klickade här!");
-}
-
-function secondButton() {
-    const namn = prompt("Ge mig namn nam nam");
-    alert("Hello " + namn);
-}
-
-function thirdButton() {
-    let namn = document.querySelector("#namn").value;
-    document.getElementById("namn").value = "";
-    console.log(namn);
-
-    if (namn == "Elias") {
-        namn = `${namn} Nybondas`;
-    }
-
-    document.querySelector("#hello-output").innerText = `Morjens ${namn}!`;
-}
 
 /*function reverseString(str){
     return str.split("").reverse().join("");
