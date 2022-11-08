@@ -7,19 +7,29 @@ function ageCheck()
     let ageCheck = confirm("I confirm am older than 18?");  
 
     if(ageCheck){
-        const money = prompt ("how much do you want to put in?")
+        alert("Welcome and have fun!")
         
     }
     else{
         alert("Underage gambling is not allowed!")
         window.close();
     }
-
-
-
-    
 }
 
+function money(){
+    let amount = document.getElementById("amount").value;
+    console.log(amount);
+}
+
+
+
+function timeUpdate() {
+    var select = document.getElementById('amountOfTime');
+    var option = select.options[select.selectedIndex];
+
+    document.getElementById('value').value = option.value;
+    document.getElementById('text').value = option.text;
+}
 
 
 function minFunktion() {
