@@ -21,13 +21,56 @@ function money(){
 
 
 
-function timeUpdate() {
-    var select = document.getElementById('amountOfTime');
-    var option = select.options[select.selectedIndex];
 
-    document.getElementById('value').value = option.value;
-    document.getElementById('text').value = option.text;
-}
+
+
+
+
+function countdown(dateEnd) {
+    var timer, hours, minutes, seconds;
+  
+    dateEnd = new Date(dateEnd);
+    dateEnd = dateEnd.getTime();
+  
+    if ( isNaN(dateEnd) ) {
+      return;
+    }
+  
+    timer = setInterval(calculate, 1000);
+  
+    function calculate() {
+      var dateStart = new Date();
+      var dateStart = new Date(dateStart.getUTCFullYear(),
+                               dateStart.getUTCMonth(),
+                               dateStart.getUTCDate(),
+                               dateStart.getUTCHours(),
+                               dateStart.getUTCMinutes(),
+                               dateStart.getUTCSeconds());
+      var timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
+  
+      if ( timeRemaining >= 0 ) {
+        timeRemaining   = (timeRemaining % 86400);
+        hours   = parseInt(timeRemaining / 3600);
+        timeRemaining   = (timeRemaining % 3600);
+        minutes = parseInt(timeRemaining / 60);
+        timeRemaining   = (timeRemaining % 60);
+        seconds = parseInt(timeRemaining);
+  
+        document.getElementById("hours").innerHTML    = parseInt("0" + hours -2);
+        document.getElementById("minutes").innerHTML   = ("0" + minutes).slice(-2);
+        document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+      } else {
+        return;
+      }
+    }
+  
+    function display(hours, minutes, seconds) {}
+  }
+  //180 står för 3h
+  //myDate är en formel för att få den nuvarande tiden plus värdet man vill lägga till
+  var myDate = new Date(new Date().getTime()+(180*60*1000));
+  
+  countdown(myDate);
 
 
 function minFunktion() {
