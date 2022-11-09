@@ -21,7 +21,10 @@ function money(){
 
 
 
-var time = 0;
+var time;
+var change;
+
+
 
 function timeUpdate() {
     var select = document.getElementById('amountOfTime');
@@ -29,17 +32,32 @@ function timeUpdate() {
 
     document.getElementById('value').value = option.value;
     document.getElementById('text').value = option.text;
+// resetes all the values
+    var myDate = 0;
+    var dateEnd = 0;
+    var dateStart = 0;
+    var timeRemaining = 0;
+    var timer, hours, minutes, seconds;
+    change = document.getElementById('value').value = option.value;
 
+    //used to change the value of change into minutues for the time
+    if(change == 1){time = 15;}
+    if(change == 2){time = 30;}
+    if(change == 3){time = 60;}
+    if(change == 4){time = 90;}
+    if(change == 5){time = 120;}
+    if(change == 6){time = 150;}
 
-   
-
+    myDate = new Date(new Date().getTime()+(time*60*1000));
+//starts the timer when the value is given
+    if (change != 0) {countdown(myDate);}
+//myDate is the calculations for the current time + the given value
 }
 
 
 
 
 function countdown(dateEnd) {
-    var timer, hours, minutes, seconds;
   
     dateEnd = new Date(dateEnd);
     dateEnd = dateEnd.getTime();
@@ -51,15 +69,15 @@ function countdown(dateEnd) {
     timer = setInterval(calculate, 1000);
   
     function calculate() {
-      var dateStart = new Date();
-      var dateStart = new Date(dateStart.getUTCFullYear(),
+     dateStart = new Date();
+     dateStart = new Date(dateStart.getUTCFullYear(),
                                dateStart.getUTCMonth(),
                                dateStart.getUTCDate(),
                                dateStart.getUTCHours(),
                                dateStart.getUTCMinutes(),
                                dateStart.getUTCSeconds());
-      var timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
-  //omkalkylerar JS milisekunder till "vanlig" tid
+       timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
+  //changes milisecs to normal time
       if ( timeRemaining >= 0 ) {
         timeRemaining   = (timeRemaining % 86400);
         hours   = parseInt(timeRemaining / 3600);
@@ -67,7 +85,7 @@ function countdown(dateEnd) {
         minutes = parseInt(timeRemaining / 60);
         timeRemaining   = (timeRemaining % 60);
         seconds = parseInt(timeRemaining);
-        //så att den inte hamnar på fel tid
+        //so the time starts "right"
         document.getElementById("hours").innerHTML    = parseInt("0" + hours -2);
         document.getElementById("minutes").innerHTML   = ("0" + minutes).slice(-2);
         document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
@@ -78,14 +96,13 @@ function countdown(dateEnd) {
   
     function display(hours, minutes, seconds) {}
   }
-  //180 står för 3h
-  //myDate är en formel för att få den nuvarande tiden plus värdet man vill lägga
 
-  var test = 60; 
-
-  var myDate = new Date(new Date().getTime()+(test*60*1000));
   
-  countdown(myDate);
+
+
+  
+  
+ 
 
 
   //https://flexiple.com/javascript/javascript-clock/

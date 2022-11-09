@@ -13,7 +13,8 @@
 
     <label for="time">for how long do you want to play?:</label>
 
-<select id="amountOfTime" onchange="timeUpdate(), countdown()">
+<select id="amountOfTime" onchange="timeUpdate()">
+  <option value="0">välj hur länge</option>
   <option value="1">15min</option>
   <option value="2">30min</option>
   <option value="3">1h</option>
@@ -34,7 +35,6 @@
 
 
 
-<button onclick="timer()">TEST</button>
     
 </body>
 </html>
