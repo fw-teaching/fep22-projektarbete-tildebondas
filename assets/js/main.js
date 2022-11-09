@@ -21,7 +21,7 @@ function money(){
 
 
 
-
+var time = 0;
 
 function timeUpdate() {
     var select = document.getElementById('amountOfTime');
@@ -29,7 +29,13 @@ function timeUpdate() {
 
     document.getElementById('value').value = option.value;
     document.getElementById('text').value = option.text;
+
+
+   
+
 }
+
+
 
 
 function countdown(dateEnd) {
@@ -41,7 +47,7 @@ function countdown(dateEnd) {
     if ( isNaN(dateEnd) ) {
       return;
     }
-  
+  //sätter att den updaterar varje sekund
     timer = setInterval(calculate, 1000);
   
     function calculate() {
@@ -53,7 +59,7 @@ function countdown(dateEnd) {
                                dateStart.getUTCMinutes(),
                                dateStart.getUTCSeconds());
       var timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
-  
+  //omkalkylerar JS milisekunder till "vanlig" tid
       if ( timeRemaining >= 0 ) {
         timeRemaining   = (timeRemaining % 86400);
         hours   = parseInt(timeRemaining / 3600);
@@ -61,7 +67,7 @@ function countdown(dateEnd) {
         minutes = parseInt(timeRemaining / 60);
         timeRemaining   = (timeRemaining % 60);
         seconds = parseInt(timeRemaining);
-  
+        //så att den inte hamnar på fel tid
         document.getElementById("hours").innerHTML    = parseInt("0" + hours -2);
         document.getElementById("minutes").innerHTML   = ("0" + minutes).slice(-2);
         document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
@@ -74,7 +80,10 @@ function countdown(dateEnd) {
   }
   //180 står för 3h
   //myDate är en formel för att få den nuvarande tiden plus värdet man vill lägga
-  var myDate = new Date(new Date().getTime()+(180*60*1000));
+
+  var test = 60; 
+
+  var myDate = new Date(new Date().getTime()+(test*60*1000));
   
   countdown(myDate);
 
