@@ -21,6 +21,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color: black;
+    text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;  
 }
 
 .button {
@@ -44,11 +49,10 @@ body {
     border-radius: 20px;
 }
 
-.basicBox #username {
+#username {
     font-weight: bold;
     font-size: 30px;
     color: crimson;
-
 }
 
 #name-check {
@@ -83,4 +87,16 @@ body {
     margin-top: -5px;
     border-top: none;
     border-radius: 0px 0px 20px 20px;
+}
+
+#clock{
+    margin-top: 5%;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+}
+
+#dittNamn {
+margin-top: 2%;
 }
