@@ -15,7 +15,7 @@ function ageCheck(){
 }
 
 function money(){
-    let amount = document.getElementById("amount").value;
+    let amount = document.getElementById("moneyPlaceholder").value;
     console.log(amount);
 }
 
@@ -23,6 +23,7 @@ function money(){
 
 var time;
 var change;
+var timer = null;
 
 
 
@@ -37,7 +38,12 @@ function timeUpdate() {
     var dateEnd = 0;
     var dateStart = 0;
     var timeRemaining = 0;
-    var timer, hours, minutes, seconds;
+    var hours, minutes, seconds;
+
+    
+
+    
+
     change = document.getElementById('value').value = option.value;
 
     //used to change the value of change into minutues for the time
@@ -65,8 +71,12 @@ function countdown(dateEnd) {
     if ( isNaN(dateEnd) ) {
       return;
     }
-  //sätter att den updaterar varje sekund
+  //makes it update every sec
+  if (timer != null){clearInterval(timer);
+  }
     timer = setInterval(calculate, 1000);
+
+    
   
     function calculate() {
      dateStart = new Date();
@@ -92,6 +102,7 @@ function countdown(dateEnd) {
       } else {
         return;
       }
+     
     }
   
     function display(hours, minutes, seconds) {}
