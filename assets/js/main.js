@@ -166,11 +166,11 @@ function theClock() {
 function websiteLoad() {
   document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
   document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-  document.getElementByQuery("#closedMsg").style.display = 'none'; //Gömmer closed message
+  document.getElementById("closedMsg").style.display = 'none'; //Gömmer closed message
 
   /*if (isWeekend() == true) {
-    document.getElementByQuery("#name-check").style.display = 'none'; //Gömmer name check
-    document.getElementByQuery("#closedMsg").style.display = 'none'; //Visar closed message
+    document.getElementById("name-check").style.display = 'none'; //Gömmer name check
+    document.getElementById("closedMsg").style.display = 'none'; //Visar closed message
   }*/
 }
 
