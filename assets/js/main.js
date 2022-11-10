@@ -15,7 +15,11 @@ function ageCheck() {
 }
 
 function money() {
+<<<<<<< HEAD
   let amount = document.getElementById("moneyPlaceholder").value;
+=======
+  let amount = document.getElementById("amount").value;
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   console.log(amount);
 }
 
@@ -34,6 +38,7 @@ let hours, minutes, seconds;
 
 
 function timeUpdate() {
+<<<<<<< HEAD
   let select = document.getElementById('amountOfTime');
   let option = select.options[select.selectedIndex];
 
@@ -53,6 +58,20 @@ function timeUpdate() {
 
 
     change = document.getElementById('value').value = option.value;
+=======
+  var select = document.getElementById('amountOfTime');
+  var option = select.options[select.selectedIndex];
+
+  document.getElementById('value').value = option.value;
+  document.getElementById('text').value = option.text;
+  // resetes all the values
+  var myDate = 0;
+  var dateEnd = 0;
+  var dateStart = 0;
+  var timeRemaining = 0;
+  var timer, hours, minutes, seconds;
+  change = document.getElementById('value').value = option.value;
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
 
   //used to change the value of change into minutues for the time
   if (change == 1) { time = 15; }
@@ -79,6 +98,7 @@ function countdown(dateEnd) {
   if (isNaN(dateEnd)) {
     return;
   }
+<<<<<<< HEAD
   //makes it update every sec
   if (timer != null) {
     clearInterval(timer);
@@ -87,6 +107,11 @@ function countdown(dateEnd) {
 
 
 
+=======
+  //sätter att den updaterar varje sekund
+  timer = setInterval(calculate, 1000);
+
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   function calculate() {
     dateStart = new Date();
     dateStart = new Date(dateStart.getUTCFullYear(),
@@ -111,7 +136,10 @@ function countdown(dateEnd) {
     } else {
       return;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   }
 
   function display(hours, minutes, seconds) { }
@@ -127,6 +155,10 @@ function countdown(dateEnd) {
 
 //https://flexiple.com/javascript/javascript-clock/
 function theClock() {
+<<<<<<< HEAD
+=======
+  console.log("theClock()");
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   //Fråga fredde om UTC
 
 
@@ -161,6 +193,11 @@ function theClock() {
 
 //Förnamn, efternamn
 function inputName() {
+<<<<<<< HEAD
+=======
+
+  console.log("inputName()");
+>>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   let fornamn = document.querySelector("#fornamn").value;
   let efternamn = document.querySelector("#efternamn").value;
 
