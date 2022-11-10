@@ -1,15 +1,16 @@
 /* Site-wide styling here */
 @font-face {
-    font-family: Minecraft;
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
     src: url('../Fonts/MinecraftRegular-Bmg3.otf');
 }
 
 @font-face {
-    font-family: Minecraft;
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
     font-weight: bold;
     src: url('../Fonts/MinecraftBold-nMK1.otf');
 }
-
 
 body {
     padding: 0;
@@ -22,10 +23,10 @@ body {
     background-size: cover;
     background-color: black;
     text-shadow:
-        -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        2px 2px 0 #000;
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .button {
@@ -39,14 +40,13 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
     text-align: center;
     background-color: rgb(27, 87, 27);
     color: white;
     padding: 20px;
     width: 30%;
     border: solid 5px black;
-    border-radius: 20px;
+    box-shadow: 5px 5px 10px black;
 }
 
 #username {
@@ -59,9 +59,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: -moz-fit-content;
     width: fit-content;
+    margin-top: 5%;
 }
 
 #name-check input {
@@ -71,23 +73,26 @@ body {
     font-size: 20px;
     border-radius: 20px;
     text-align: center;
+    border:none;
 }
 
 #name-check button {
     margin: 5px;
     text-align: center;
-    background-color: rgb(31, 128, 31);
+    background-color: rgb(57, 145, 57);
     border-radius: 20px;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
     font-size: 25px;
     padding: 15px 25px 15px 25px;
     color: white;
+    border:none;
 }
 
 #errorMsg {
     margin-top: -5px;
     border-top: none;
     border-radius: 0px 0px 20px 20px;
+    text-shadow: 0;
 }
 
 
@@ -103,6 +108,13 @@ body {
     text-align: right;
     bottom: 0px;
     width: 100%;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+
 }
 
 #clock {
@@ -116,5 +128,19 @@ body {
 }
 
 #dittNamn {
-    margin-top: 2%;
+    margin-top: 5%;
+}
+
+#Title{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 100px;
+    text-shadow:
+        -5px -5px 0 #000,
+        5px -5px 0 #000,
+        -5px 5px 0 #000,
+        5px 5px 0 #000, 
+        5px 5px 10px black; ;
+    margin: 100px 0 0 0;
 }
