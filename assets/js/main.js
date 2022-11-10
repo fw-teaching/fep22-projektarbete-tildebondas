@@ -158,10 +158,20 @@ function theClock() {
 }*/
 
 
+/*function isWeekend(){
+
+}*/
+
 //Funktion som körs när webbsidan laddas
 function websiteLoad() {
   document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
   document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
+  document.getElementByQuery("#closedMsg").style.display = 'none'; //Gömmer closed message
+
+  /*if (isWeekend() == true) {
+    document.getElementByQuery("#name-check").style.display = 'none'; //Gömmer name check
+    document.getElementByQuery("#closedMsg").style.display = 'none'; //Visar closed message
+  }*/
 }
 
 //Förnamn, efternamn

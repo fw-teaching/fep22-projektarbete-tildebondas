@@ -10,19 +10,20 @@
     <title>CasinoCraft</title>
 </head>
 
-<body  onload="websiteLoad()"> <!-- onload="ageCheck()"> -->
+<body onload="websiteLoad()"> <!-- onload="ageCheck()"> -->
 
     <p id="Title">CasinoCraft</p>
+
+    <div class="basicBox" id="closedMsg">The website is closed!</div>
 
     <div class="basicBox" id="name-check">
         <input id="fornamn" placeholder="First name">
         <input id="efternamn" placeholder="Last name">
         <button id="button" onclick="inputName()">ENTER</button>
     </div>
-    <p id="errorMsg" class="basicBox">Fyll i båda fälten!</p>
+    <p id="errorMsg">Fyll i båda fälten!</p>
 
     <div id="website-output">
-
         <div id="timeLeft"></div>
 
         <div class="basicBox" id="dittNamn">
