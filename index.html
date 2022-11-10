@@ -10,21 +10,28 @@
     <title>CasinoCraft</title>
 </head>
 
-<body onload="ageCheck()">
+<body onload="inputName()" onload="websiteLoad()"> <!-- onload="ageCheck()"> -->
 
     <div class="basicBox" id="name-check">
         <input id="fornamn" placeholder="First name">
         <input id="efternamn" placeholder="Last name">
         <button id="button" onclick="inputName()">ENTER</button>
     </div>
-    <p id="errorMsg" style="display: none" class="basicBox">Fyll i båda fälten!</p>
+    <p id="errorMsg" class="basicBox">Fyll i båda fälten!</p>
 
-    <div style="display: none" id="website-output">
-        <div id="clock" class="basicBox"></div>
+    <div id="website-output">
+
+        <div id="timeLeft"></div>
+
         <div class="basicBox" id="dittNamn">
             <p id="name-box"></p>
             <p class="rainbow-text" id="username"></p>
         </div>
+
+        <section id="clockbox">
+            <div id="clock"></div>
+            <div id="date"></div>
+        </section>
     </div>
 </body>
 

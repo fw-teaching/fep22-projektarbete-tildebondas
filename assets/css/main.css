@@ -22,10 +22,10 @@ body {
     background-size: cover;
     background-color: black;
     text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;  
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
 }
 
 .button {
@@ -60,6 +60,7 @@ body {
     margin-right: auto;
     display: flex;
     justify-content: center;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -89,14 +90,31 @@ body {
     border-radius: 0px 0px 20px 20px;
 }
 
-#clock{
-    margin-top: 5%;
+
+
+
+#clockbox {
+    display: flex;
+    flex-direction: column;
     font-size: 40px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    width: fit-content;
+    position: fixed;
+    text-align: right;
+    bottom: 0px;
+    width: 100%;
+}
+
+#clock {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#date {
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 #dittNamn {
-margin-top: 2%;
+    margin-top: 2%;
 }

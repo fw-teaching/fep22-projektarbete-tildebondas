@@ -14,31 +14,26 @@ function ageCheck() {
   }
 }
 
+let amount = null;
 function money() {
-<<<<<<< HEAD
-  let amount = document.getElementById("moneyPlaceholder").value;
-=======
-  let amount = document.getElementById("amount").value;
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
+  amount = document.getElementById("moneyPlaceholder").value;
   console.log(amount);
 }
 
+//all variables for the codes
 
-
-let time;
-let change;
+let time = null;
+let change = null;
 let timer = null;
-let myDate = 0;
-let dateEnd = 0;
-let dateStart = 0;
-let timeRemaining = 0;
-let hours, minutes, seconds;
-
-
-
+let myDate = null;
+let dateEnd = null;
+let dateStart = null;
+let timeRemaining = null;
+let hours = null;
+let minutes = null;
+let seconds = null;
 
 function timeUpdate() {
-<<<<<<< HEAD
   let select = document.getElementById('amountOfTime');
   let option = select.options[select.selectedIndex];
 
@@ -58,20 +53,6 @@ function timeUpdate() {
 
 
     change = document.getElementById('value').value = option.value;
-=======
-  var select = document.getElementById('amountOfTime');
-  var option = select.options[select.selectedIndex];
-
-  document.getElementById('value').value = option.value;
-  document.getElementById('text').value = option.text;
-  // resetes all the values
-  var myDate = 0;
-  var dateEnd = 0;
-  var dateStart = 0;
-  var timeRemaining = 0;
-  var timer, hours, minutes, seconds;
-  change = document.getElementById('value').value = option.value;
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
 
   //used to change the value of change into minutues for the time
   if (change == 1) { time = 15; }
@@ -98,20 +79,15 @@ function countdown(dateEnd) {
   if (isNaN(dateEnd)) {
     return;
   }
-<<<<<<< HEAD
-  //makes it update every sec
+  //resetes the intervall if a new time is given before the prevoius one has run out
   if (timer != null) {
     clearInterval(timer);
   }
   timer = setInterval(calculate, 1000);
+  //makes it update every sec
 
 
-
-=======
-  //sätter att den updaterar varje sekund
-  timer = setInterval(calculate, 1000);
-
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
+  //gets entire date to be able to later write out the time that the timer ends on
   function calculate() {
     dateStart = new Date();
     dateStart = new Date(dateStart.getUTCFullYear(),
@@ -136,29 +112,16 @@ function countdown(dateEnd) {
     } else {
       return;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   }
-
+  //used to dispaly the timer
   function display(hours, minutes, seconds) { }
 }
 
 
 
-
-
-
-
-
-
 //https://flexiple.com/javascript/javascript-clock/
 function theClock() {
-<<<<<<< HEAD
-=======
   console.log("theClock()");
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   //Fråga fredde om UTC
 
 
@@ -180,24 +143,30 @@ function theClock() {
   day = (day < 10) ? "0" + day : day;
   mo = (mo < 10) ? "0" + mo : mo;
 
-  let time = `${day}.${mo}.${year} ${hh}:${mm}:${ss}`;
+  let timeOut = `${hh}:${mm}:${ss}`;
+  let dateOut = `${day}.${mo}.${year}`
 
-  document.getElementById("clock").innerText = time;
+  document.getElementById("clock").innerText = timeOut;
+  document.getElementById("date").innerText = dateOut;
   setTimeout(function () { theClock() }, 1000);
 
 }
+
+
 /*function reverseString(str){
     return str.split("").reverse().join("");
 }*/
 
 
+//Funktion som körs när webbsidan laddas
+function websiteLoad() {
+  document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
+  document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
+}
+
 //Förnamn, efternamn
 function inputName() {
-<<<<<<< HEAD
-=======
-
   console.log("inputName()");
->>>>>>> 161dc2df837a7426365ac5334923b0cffe73bd7f
   let fornamn = document.querySelector("#fornamn").value;
   let efternamn = document.querySelector("#efternamn").value;
 
@@ -222,4 +191,9 @@ function inputName() {
 
     console.log(fornamn, efternamn, username);
   }
+}
+
+//Räknar hur länge tills webbsidan stängs
+function timeLeft() {
+
 }
