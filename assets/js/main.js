@@ -169,24 +169,38 @@ function theClock() {
   setTimeout(theClock, 1000); //setTimeout eftersom timern är inne i själva funktionen, behöver inte skiljd setInterval för att starta klockan
 }
 
-//Checkar ifall det är veckoslut
+let weekend = new Date();
+
+function theDate() {
+  console.log("theDate()")
+  weekday = document.querySelector('#weekday').value;
+  console.log(weekday);
+}
+
+//Checkar ifall weekday har värdet veckoslut
 function isWeekend(){
+  if (weekday == 0 || weekday == 6){
+    return true;
+  }
+
   let date = new Date();
   let day = date.getDay();
+
   if (day == 0 || day == 6){
     return true;
   }
 }
 
+//Checkar varje sekund om det är veckoslut
+const closeWeekendTimer = setInterval(closeWeekend, 1000);
+
 //Stänger sidan ifall veckoslut
 function closeWeekend(){
   if (isWeekend() == true) {
+    clearInterval(closeWeekendTimer);
     window.open("../pages/closed.html", "_self")
   }
 }
-
-//Checkar varje minut om det är veckoslut
-setInterval(closeWeekend, 60000);
 
 //Räknar hur länge tills casino öppnar
 function timeLeft() {

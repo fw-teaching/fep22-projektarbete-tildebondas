@@ -31,6 +31,8 @@ function inputName() {
 function websiteLoad() {
     document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
     document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-  
+    let weekday = weekend.getDay();
+    document.querySelector('#weekday').value = weekday;
+
     closeWeekend();
   }

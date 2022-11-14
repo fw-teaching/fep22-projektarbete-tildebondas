@@ -12,7 +12,7 @@
     <title>CasinoCraft</title>
 </head>
 
-<body onload="websiteLoad()"> <!-- onload="ageCheck()"> -->
+<body onload="websiteLoad()" onload="setWeekdayByClock()"> <!-- onload="ageCheck()"> -->
 
     <p id="Title">CasinoCraft</p>
 
@@ -24,8 +24,6 @@
     <p id="errorMsg">Fyll i båda fälten!</p>
 
     <div id="website-output">
-        
-        <div id="timeLeft"></div>
 
         <div class="basicBox" id="dittNamn">
             <p id="name-box"></p>
@@ -33,10 +31,19 @@
         </div>
 
         <section id="clockbox">
+            <select id="weekday" onchange="theDate()">
+                <option value="0">Söndag</option>
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+              </select>
             <div id="clock"></div>
             <div id="date"></div>
         </section>
-        
+
     </div>
 </body>
 
