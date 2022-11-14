@@ -39,14 +39,8 @@ function timeUpdate() {
 
   document.getElementById('value').value = option.value;
   document.getElementById('text').value = option.text;
-  // resetes all the values
-  myDate = 0;
-  dateEnd = 0;
-  dateStart = 0;
-  timeRemaining = 0;
-  hours = 0
-  minutes = 0;
-  seconds = 0,
+  
+
 
 
 
@@ -66,6 +60,15 @@ function timeUpdate() {
   //starts the timer when the value is given
   if (change != 0) { countdown(myDate); }
   //myDate is the calculations for the current time + the given value
+ 
+// document.getElementById("timeEnds").innerHTML = myDate.getHours();
+  //gets the information for when the timer ends
+
+  let timesUp = myDate;
+  document.querySelector("#timeEnds").innerText = `
+  Time's up ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}
+  `;
+//shows when the timer ends
 }
 
 
@@ -90,12 +93,12 @@ function countdown(dateEnd) {
   //gets entire date to be able to later write out the time that the timer ends on
   function calculate() {
     dateStart = new Date();
-    dateStart = new Date(dateStart.getUTCFullYear(),
-      dateStart.getUTCMonth(),
-      dateStart.getUTCDate(),
-      dateStart.getUTCHours(),
-      dateStart.getUTCMinutes(),
-      dateStart.getUTCSeconds());
+    dateStart = new Date(dateStart.getFullYear(),
+      dateStart.getMonth(),
+      dateStart.getDate(),
+      dateStart.getHours(),
+      dateStart.getMinutes(),
+      dateStart.getSeconds());
     timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
     //changes milisecs to normal time
     if (timeRemaining >= 0) {
@@ -106,16 +109,36 @@ function countdown(dateEnd) {
       timeRemaining = (timeRemaining % 60);
       seconds = parseInt(timeRemaining);
       //so the time starts "right"
-      document.getElementById("hours").innerHTML = parseInt("0" + hours - 2);
-      document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
-      document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+      document.getElementById("hours").innerHTML = parseInt(hours);
+      document.getElementById("minutes").innerHTML = (minutes);
+      document.getElementById("seconds").innerHTML = (seconds);
+      
+      
+      if (hours == 0 && minutes == 0 && seconds == 0){
+        alert("times up!")
+      } //alerts when time is up
+
+
     } else {
       return;
     }
   }
   //used to dispaly the timer
   function display(hours, minutes, seconds) { }
+
+  
 }
+
+
+function timesUp(){
+
+  alert("times up!")
+
+}
+
+
+
+
 
 
 
