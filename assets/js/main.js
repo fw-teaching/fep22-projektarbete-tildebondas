@@ -1,5 +1,5 @@
 /* Site-wide JS i den här filen (t.ex. huvudmenyn) */
-
+console.log("main.js init");
 
 //the function that checks the age and if underage exits the site with a promt
 function ageCheck() {
@@ -119,16 +119,12 @@ function countdown(dateEnd) {
 
 
 
-//https://flexiple.com/javascript/javascript-clock/
 function theClock() {
   console.log("theClock()");
-  //Fråga fredde om UTC
-
 
   /*const full_date = new Date().toLocaleDateString(); //Date String
   const full_time = new Date().toLocaleTimeString(); // Time String*/
   //Lättare sätt att göra allt nedanför
-
 
   let date = new Date();
   let day = date.getDate();
@@ -137,6 +133,11 @@ function theClock() {
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ss = date.getSeconds();
+
+  /*
+  Sätter 0 framför ifall värdet är under 10
+  https://flexiple.com/javascript/javascript-clock/
+  */
   hh = (hh < 10) ? "0" + hh : hh;
   mm = (mm < 10) ? "0" + mm : mm;
   ss = (ss < 10) ? "0" + ss : ss;
@@ -148,30 +149,35 @@ function theClock() {
 
   document.getElementById("clock").innerText = timeOut;
   document.getElementById("date").innerText = dateOut;
-  setTimeout(function () { theClock() }, 1000);
-
+  setTimeout(theClock, 1000); //setTimeout eftersom timern är inne i själva funktionen, behöver inte skiljd setInterval för att starta klockan
 }
 
 
-/*function reverseString(str){
-    return str.split("").reverse().join("");
-}*/
+//Checkar ifall det är veckoslut
+function isWeekend(){
+  let date = new Date();
+  let day = date.getDay();
+  if (day == 0 || day == 6){
+    return true;
+  }
+}
 
+//Stänger sidan ifall veckoslut
+function closeWeekend(){
+  if (isWeekend() == true) {
+    window.open("../pages/closed.html", "_self")
+  }
+}
 
-/*function isWeekend(){
-
-}*/
+//Checkar varje minut om det är veckoslut
+setInterval(closeWeekend, 60000);
 
 //Funktion som körs när webbsidan laddas
 function websiteLoad() {
   document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
   document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-  document.getElementById("closedMsg").style.display = 'none'; //Gömmer closed message
 
-  /*if (isWeekend() == true) {
-    document.getElementById("name-check").style.display = 'none'; //Gömmer name check
-    document.getElementById("closedMsg").style.display = 'none'; //Visar closed message
-  }*/
+  closeWeekend();
 }
 
 //Förnamn, efternamn
@@ -203,7 +209,11 @@ function inputName() {
   }
 }
 
+document.querySelector("#buttonEnter").addEventListener('click', function (evt) {
+  inputName();
+});
+
 //Räknar hur länge tills webbsidan stängs
 function timeLeft() {
-
+  return false;
 }
