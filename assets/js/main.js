@@ -136,12 +136,6 @@ function timesUp(){
 
 }
 
-
-
-
-
-
-
 function theClock() {
   console.log("theClock()");
 
@@ -175,7 +169,6 @@ function theClock() {
   setTimeout(theClock, 1000); //setTimeout eftersom timern är inne i själva funktionen, behöver inte skiljd setInterval för att starta klockan
 }
 
-
 //Checkar ifall det är veckoslut
 function isWeekend(){
   let date = new Date();
@@ -195,46 +188,7 @@ function closeWeekend(){
 //Checkar varje minut om det är veckoslut
 setInterval(closeWeekend, 60000);
 
-//Funktion som körs när webbsidan laddas
-function websiteLoad() {
-  document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
-  document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-
-  closeWeekend();
-}
-
-//Förnamn, efternamn
-function inputName() {
-  console.log("inputName()");
-  let fornamn = document.querySelector("#fornamn").value;
-  let efternamn = document.querySelector("#efternamn").value;
-
-
-  //Displayar error ifall ena fältet eller båda är tomt
-  if (fornamn == 0 || efternamn == 0) {
-    document.getElementById("errorMsg").style.display = ''; //Displayar error
-  }
-
-  //Annars genereras username, sidan laddas
-  else {
-    let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
-    /*let reverse = reverseString(fornamn);
-    let username = reverse.replace(/\s/g, '').toLowerCase() + 336;*/
-    document.getElementById("website-output").style.display = ''; //Displayar webbsidan
-    document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
-    document.querySelector("#username").innerText = username;
-    document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
-    document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-
-    theClock();
-
-    console.log(fornamn, efternamn, username);
-  }
-}
-
-document.querySelector("#buttonEnter").addEventListener('click', (evt) => inputName());
-
-//Räknar hur länge tills webbsidan stängs
+//Räknar hur länge tills casino öppnar
 function timeLeft() {
   return false;
 }
