@@ -232,9 +232,7 @@ function inputName() {
   }
 }
 
-document.querySelector("#buttonEnter").addEventListener('click', function (evt) {
-  inputName();
-});
+document.querySelector("#buttonEnter").addEventListener('click', (evt) => inputName());
 
 //Räknar hur länge tills webbsidan stängs
 function timeLeft() {
