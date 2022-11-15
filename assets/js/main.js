@@ -17,27 +17,18 @@ function ageCheck() {
 let amount = null;
 function money() {
 
-  amount = document.getElementById("moneyPlaceholder").value;
+  amount = Number(document.getElementById("moneyPlaceholder").value);
 
-  if (amount <= 0) {
-    alert("Insert a number")
+  if (amount >= 1) {
+    
+    console.log(amount);
+    return true;
   }
 
   else {
-    console.log(amount);
-
-    return true;
+    alert("Insert amount")
   }
 }
-
-function onlyNumberKey(evt) {
-              
-  // Only ASCII character in that range allowed
-  let ASCIICode = (evt.which) ? evt.which : evt.keyCode
-  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-      return false;
-  return true;
-} //source https://www.geeksforgeeks.org/how-to-force-input-field-to-enter-numbers-only-using-javascript/
 
 //all variables for the codes
 
