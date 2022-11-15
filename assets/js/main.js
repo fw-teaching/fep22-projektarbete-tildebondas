@@ -14,7 +14,7 @@ function ageCheck() {
   }
 }
 
-let amount = null;
+let amount;
 function money() {
 
   amount = Number(document.getElementById("moneyPlaceholder").value);
@@ -212,9 +212,4 @@ function closeWeekend() {
     clearInterval(closeWeekendTimer);
     window.open("../pages/closed.html", "_self")
   }
-}
-
-//Räknar hur länge tills casino öppnar
-function timeLeft() {
-  return false;
 }

@@ -14,8 +14,25 @@
 
     <div id="timeLeft"></div>
 
-    <div class="basicBox" id="closedMsg">The website is closed!</div>
+    <div class="basicBox" id="closedMsg">
+        <p>The website is closed!</p>
+        <div id="timeLeft"></div>
+    </div>
 
     <button id="buttonBack">Back to website (Dev option)</button>
+
+    <section id="clockbox">
+        <select id="weekday" onchange="theDate()">
+            <option value="0">Söndag</option>
+            <option value="1">Måndag</option>
+            <option value="2">Tisdag</option>
+            <option value="3">Onsdag</option>
+            <option value="4">Torsdag</option>
+            <option value="5">Fredag</option>
+            <option value="6">Lördag</option>
+        </select>
+        <div id="clock"></div>
+        <div id="date"></div>
+    </section>
 </body>
 </html>
