@@ -29,12 +29,6 @@ body {
         1px 1px 0 #000;
 }
 
-.button {
-    background-color: gray;
-    display: block;
-    text-align: center;
-    padding: 5px;
-}
 
 .basicBox {
     display: block;
@@ -47,6 +41,19 @@ body {
     width: 30%;
     border: solid 5px black;
     box-shadow: 5px 5px 10px black;
+}
+
+.button {
+    margin: 5px;
+    text-align: center;
+    background-color: rgb(57, 145, 57);
+    border-radius: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 15px 25px 15px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 #clockbox {
@@ -99,4 +106,68 @@ body {
         5px 5px 0 #000, 
         5px 5px 10px black; ;
     margin: 2% 0 0 0;
+}
+
+.invisible input{
+    display: none;
+}
+
+.invisible {
+    visibility: 0;
+}
+
+.countdown{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    text-align: right;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+}
+
+#money {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    text-align: left;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+}
+
+#moneyNumber {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#emeraldImage {
+    margin-left: 20px;
+}
+
+.timer{
+    margin-right: 20px;
+}
+
+#timeEnds{
+    margin-right: 20px;
+    margin-top: 10px;
 }

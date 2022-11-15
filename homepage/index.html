@@ -12,14 +12,15 @@
     <title>CasinoCraft</title>
 </head>
 
-<body onload="websiteLoad()" onload="setWeekdayByClock()"> <!-- onload="ageCheck()"> -->
+<body onload="websiteLoad()">
+    <!-- onload="ageCheck()"> -->
 
     <p id="Title">CasinoCraft</p>
 
     <div class="basicBox" id="name-check">
         <input id="fornamn" placeholder="First name">
         <input id="efternamn" placeholder="Last name">
-        <button id="buttonEnter">ENTER</button>
+        <button class="button" id="buttonEnter">ENTER</button>
     </div>
     <p id="errorMsg">Fyll i båda fälten!</p>
 
@@ -28,7 +29,44 @@
         <div class="basicBox" id="dittNamn">
             <p id="name-box"></p>
             <p class="rainbow-text" id="username"></p>
+
+            <p id="howMany">How many emeralds would you like to put in?</p>
+            <input id="moneyPlaceholder" placeholder="Amount" onkeypress="return onlyNumberKey(event)">
+            <input class="button" id="okButt" type="button" value="OK" onclick="hideMoney()">
+
+            <p id="howLong">How long would you like to play?</p>
+
+            <select id="amountOfTime">
+                <option value="0">Time</option>
+                <option value="1">15min</option>
+                <option value="2">30min</option>
+                <option value="3">1h</option>
+                <option value="4">1h 30m</option>
+                <option value="5">2h</option>
+                <option value="6">2h 30m</option>
+            </select>
         </div>
+
+        <div class="invisible">
+            <input title="indexPlaceholder" type="text" id="value">
+            <input title="textPlaceholder" type="text" id="text">
+        </div>
+
+
+        <div id="money">
+            <div id="moneyNumber"></div>
+            <img id="emeraldImage" alt="Emeralds" src="../images/Emerald.png"></img>
+        </div>
+
+        <div class="countdown">
+            <div id="timeEnds"></div>
+            <div class="timer">
+                <span id="hours"></span>
+                <span id="minutes"></span>
+                <span id="seconds"></span>
+            </div>
+        </div>
+
 
         <section id="clockbox">
             <select id="weekday" onchange="theDate()">
@@ -39,7 +77,7 @@
                 <option value="4">Torsdag</option>
                 <option value="5">Fredag</option>
                 <option value="6">Lördag</option>
-              </select>
+            </select>
             <div id="clock"></div>
             <div id="date"></div>
         </section>

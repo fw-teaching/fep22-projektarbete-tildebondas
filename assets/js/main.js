@@ -16,9 +16,28 @@ function ageCheck() {
 
 let amount = null;
 function money() {
+
   amount = document.getElementById("moneyPlaceholder").value;
-  console.log(amount);
+
+  if (amount <= 0) {
+    alert("Insert a number")
+  }
+
+  else {
+    console.log(amount);
+
+    return true;
+  }
 }
+
+function onlyNumberKey(evt) {
+              
+  // Only ASCII character in that range allowed
+  let ASCIICode = (evt.which) ? evt.which : evt.keyCode
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+      return false;
+  return true;
+} //source https://www.geeksforgeeks.org/how-to-force-input-field-to-enter-numbers-only-using-javascript/
 
 //all variables for the codes
 
@@ -33,20 +52,22 @@ let hours = null;
 let minutes = null;
 let seconds = null;
 
+
+
 function timeUpdate() {
   let select = document.getElementById('amountOfTime');
   let option = select.options[select.selectedIndex];
 
   document.getElementById('value').value = option.value;
   document.getElementById('text').value = option.text;
-  
 
 
 
 
 
 
-    change = document.getElementById('value').value = option.value;
+
+  change = document.getElementById('value').value = option.value;
 
   //used to change the value of change into minutues for the time
   if (change == 1) { time = 15; }
@@ -60,15 +81,13 @@ function timeUpdate() {
   //starts the timer when the value is given
   if (change != 0) { countdown(myDate); }
   //myDate is the calculations for the current time + the given value
- 
-// document.getElementById("timeEnds").innerHTML = myDate.getHours();
+
+  // document.getElementById("timeEnds").innerHTML = myDate.getHours();
   //gets the information for when the timer ends
 
   let timesUp = myDate;
-  document.querySelector("#timeEnds").innerText = `
-  Time's up ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}
-  `;
-//shows when the timer ends
+  document.querySelector("#timeEnds").innerText = `Time's up ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}`;
+  //shows when the timer ends
 }
 
 
@@ -112,9 +131,9 @@ function countdown(dateEnd) {
       document.getElementById("hours").innerHTML = parseInt(hours);
       document.getElementById("minutes").innerHTML = (minutes);
       document.getElementById("seconds").innerHTML = (seconds);
-      
-      
-      if (hours == 0 && minutes == 0 && seconds == 0){
+
+
+      if (hours == 0 && minutes == 0 && seconds == 0) {
         alert("times up!")
       } //alerts when time is up
 
@@ -126,15 +145,17 @@ function countdown(dateEnd) {
   //used to dispaly the timer
   function display(hours, minutes, seconds) { }
 
-  
+
 }
 
 
-function timesUp(){
+function timesUp() {
 
   alert("times up!")
 
 }
+
+//some of the code from: source https://codepen.io/mathew-c/pen/waXWvO
 
 function theClock() {
   console.log("theClock()");
@@ -178,15 +199,15 @@ function theDate() {
 }
 
 //Checkar ifall weekday har värdet veckoslut
-function isWeekend(){
-  if (weekday == 0 || weekday == 6){
+function isWeekend() {
+  if (weekday == 0 || weekday == 6) {
     return true;
   }
 
   let date = new Date();
   let day = date.getDay();
 
-  if (day == 0 || day == 6){
+  if (day == 0 || day == 6) {
     return true;
   }
 }
@@ -195,7 +216,7 @@ function isWeekend(){
 const closeWeekendTimer = setInterval(closeWeekend, 1000);
 
 //Stänger sidan ifall veckoslut
-function closeWeekend(){
+function closeWeekend() {
   if (isWeekend() == true) {
     clearInterval(closeWeekendTimer);
     window.open("../pages/closed.html", "_self")
