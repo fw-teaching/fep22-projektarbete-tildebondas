@@ -20,11 +20,8 @@ function money() {
   amount = Number(document.getElementById("moneyPlaceholder").value);
 
   if (amount >= 1) {
-<<<<<<< HEAD
     localStorage.setItem("amount", amount);
-=======
 
->>>>>>> b6c5cedcd7cd841e75c499fcd2b8559882ccb42b
     console.log(amount);
     
     return true;
