@@ -2,31 +2,27 @@ document.querySelector("#buttonBack").addEventListener('click', function (evt) {
     window.open("../homepage/index.html", "_self")
 });
 
-//Räknar hur länge tills casino öppnar
-weekday = document.querySelector('#weekday').value;
-if (weekday == 6) {
-    let hh = 48;
-    let mm = 0;
-    let ss = 0;
+const timerGet = new Date();
+
+weekday = localStorage.getItem("weekday");
+document.getElementById("weekday").value = weekday;
+console.log(weekday)
+
+//Räknar hur många dagar tills nästa måndag. Ifall lördag blir 2, ifall söndag blir 1
+const nextMonday = ((1 + 7 - weekday) % 7);
+
+function timerOpen() {
+    let cH = timerGet.getHours();
+    let cM = timerGet.getMinutes();
+    let cS = timerGet.getSeconds();
+
+    let h = nextMonday * 24 - cH;
+    let m = 60 - cM;
+    let s = 60 - cS;
+
+    let output = `${h}h ${m}m ${s}s until casino opens`
+
+    document.querySelector("#timeLeft").innerText = output;
 }
 
-if (weekday == 0) {
-    let hh = 24;
-    let mm = 0;
-    let ss = 0;
-}
-function timeLeft() {
-    --ss
-    if (ss < 0 && mm < 0 && hh < 0) {
-        window.open("../homepage/index.html", "_self")
-    }
-
-    else if (ss < 0 && (hh != 0 || hh < 0)) {
-        --mm
-        ss = 59
-        if (mm < 0) {
-            mm = 59
-            --hh
-        }
-    }
-}
+setInterval(timerOpen, 1000)

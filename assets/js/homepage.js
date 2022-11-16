@@ -8,12 +8,11 @@ document.querySelector("#amountOfTime").addEventListener('change', function (evt
 function websiteLoad() {
   document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
   document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-  let weekday = weekend.getDay();
-  document.querySelector('#weekday').value = weekday;
-
   document.getElementById("amountOfTime").style.display = 'none'; //Gömmer tidsval
-  document.getElementById("howLong").style.display = 'none';
+  document.getElementById("howLong").style.display = 'none'; //Gömmer counter
 
+  document.querySelector('#weekday').value = weekday;
+  let weekday = weekend.getDay();
   closeWeekend();
 }
 
@@ -32,6 +31,7 @@ function inputName() {
   //Annars genereras username, sidan laddas
   else {
     let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+    localStorage.setItem("username", username);
     document.getElementById("website-output").style.display = ''; //Displayar webbsidan
     document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
     document.querySelector("#username").innerText = username;
