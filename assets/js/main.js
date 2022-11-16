@@ -20,7 +20,7 @@ function money() {
   amount = Number(document.getElementById("moneyPlaceholder").value);
 
   if (amount >= 1) {
-    
+
     console.log(amount);
     return true;
   }
@@ -35,10 +35,12 @@ function money() {
 let time = null;
 let change = null;
 let timer = null;
-let myDate = null;
-let dateEnd = null;
-let dateStart = null;
-let timeRemaining = null;
+let timeWhen;
+// let expDate = null;
+//let dateEnd = null;
+//let dateStart = null;
+//let timeRemaining = null;
+let days = null;
 let hours = null;
 let minutes = null;
 let seconds = null;
@@ -68,21 +70,52 @@ function timeUpdate() {
   if (change == 5) { time = 120; }
   if (change == 6) { time = 150; }
 
-  myDate = new Date(new Date().getTime() + (time * 60 * 1000));
+  expDate = new Date(new Date().getTime() + (time * 60 * 1000));
   //starts the timer when the value is given
-  if (change != 0) { countdown(myDate); }
+  if (change != 0) { countdown(expDate); }
   //myDate is the calculations for the current time + the given value
 
   // document.getElementById("timeEnds").innerHTML = myDate.getHours();
   //gets the information for when the timer ends
 
-  let timesUp = myDate;
-  document.querySelector("#timeEnds").innerText = `Time's up ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}`;
+  let timesUp = expDate;
+  document.querySelector("#timeEnds").innerText = `Time's up ${expDate.getHours()}:${expDate.getMinutes()}:${expDate.getSeconds()}`;
   //shows when the timer ends
 }
 
+function countdown() {
 
+  if (timer != null) {
+    clearInterval(timer);
+  }//clears if timer is not null
+  timer = setInterval(calculate, 1000);
 
+  function calculate() {
+
+    let dateNow = new Date().getTime();
+    //gets current date
+
+    timeWhen = expDate - dateNow;
+    //timeWhen is when to the countdown is couting towards
+
+    days = Math.floor(timeWhen / (1000 * 60 * 60 * 24));
+    hours = Math.floor((timeWhen % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes = Math.floor((timeWhen % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((timeWhen % (1000 * 60)) / 1000);
+
+    if (hours == 0 && minutes == 0 && seconds == 0) {
+      alert("times up!")
+      clearInterval(timer);
+    } //alerts when time is up
+
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+  }
+
+}
+/*
 
 function countdown(dateEnd) {
 
@@ -139,7 +172,7 @@ function countdown(dateEnd) {
 
 }
 
-
+*/
 function timesUp() {
 
   alert("times up!")
