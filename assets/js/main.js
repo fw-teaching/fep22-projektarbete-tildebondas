@@ -45,7 +45,20 @@ let hours = null;
 let minutes = null;
 let seconds = null;
 
+// -----------------------------------------------------------------------------------------------------
+// NEEDS FIX!!!!!!!!!
 
+function numberCheck(evt) {
+  let check = (evt.which) ? evt.which : evt.keyCode
+  if (check > 31 && (check < 48 || check > 57 ) || check == 44 || check == 46)
+    return false;
+  return true;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+//44 AND 46 ASC FOR , AND .
+// evt evaluates the first operand. If that evaluation returns true, the second operand is returned. If false, the third is returned.
 
 function timeUpdate() {
   let select = document.getElementById('amountOfTime');
