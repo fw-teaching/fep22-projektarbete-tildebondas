@@ -10,9 +10,10 @@ function websiteLoad() {
   document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
   document.getElementById("amountOfTime").style.display = 'none'; //Gömmer tidsval
   document.getElementById("howLong").style.display = 'none'; //Gömmer counter
+  document.getElementById("money").style.display = 'none'; //Gömmer emerald counter
 
+  weekday = weekend.getDay();
   document.querySelector('#weekday').value = weekday;
-  let weekday = weekend.getDay();
   closeWeekend();
 }
 
@@ -46,10 +47,14 @@ function inputName() {
 
 function hideMoney() {
 
+  console.log("hideMoney()");
+
   if (money() == true) {
     document.getElementById("howMany").style.display = 'none';
     document.getElementById("moneyPlaceholder").style.display = 'none';
     document.getElementById("okButt").style.display = 'none';
+
+    document.getElementById("money").style.display = ''; //Emerald counter
 
     document.getElementById("moneyNumber").innerText = amount;
 

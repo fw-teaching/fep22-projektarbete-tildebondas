@@ -10,19 +10,21 @@ console.log(weekday)
 
 //Räknar hur många dagar tills nästa måndag. Ifall lördag blir 2, ifall söndag blir 1
 const nextMonday = ((1 + 7 - weekday) % 7);
+timerOpen();
 
 function timerOpen() {
-    let cH = timerGet.getHours();
-    let cM = timerGet.getMinutes();
-    let cS = timerGet.getSeconds();
+    console.log("timerOpen");
+    let h = timerGet.getHours();
+    let m = timerGet.getMinutes();
+    let s = timerGet.getSeconds();
 
-    let h = nextMonday * 24 - cH;
-    let m = 60 - cM;
-    let s = 60 - cS;
+    h = nextMonday * 24 - h;
+    m = 60 - m;
+    s = 60 - s;
 
-    let output = `${h}h ${m}m ${s}s until casino opens`
+    let output = `${h}h ${m}m ${s}s until opening`
 
     document.querySelector("#timeLeft").innerText = output;
 }
 
-setInterval(timerOpen, 1000)
+setInterval(timerOpen, 1000);

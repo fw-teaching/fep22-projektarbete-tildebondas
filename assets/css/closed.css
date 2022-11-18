@@ -17,3 +17,8 @@
     border: 1;
     cursor: pointer;
 }
+
+#timeLeft{
+    font-size: 30px;
+    font-weight: bold;
+}

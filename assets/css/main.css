@@ -103,12 +103,13 @@ body {
         -5px -5px 0 #000,
         5px -5px 0 #000,
         -5px 5px 0 #000,
-        5px 5px 0 #000, 
-        5px 5px 10px black; ;
+        5px 5px 0 #000,
+        5px 5px 10px black;
+    ;
     margin: 2% 0 0 0;
 }
 
-.invisible input{
+.invisible input {
     display: none;
 }
 
@@ -116,7 +117,7 @@ body {
     visibility: 0;
 }
 
-.countdown{
+.countdown {
     display: flex;
     flex-direction: column;
     font-size: 30px;
@@ -136,8 +137,7 @@ body {
 }
 
 #money {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     font-size: 30px;
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -145,7 +145,7 @@ body {
     text-align: left;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 105px;
     text-shadow:
         -2px -2px 0 #000,
         2px -2px 0 #000,
@@ -155,21 +155,27 @@ body {
 }
 
 #moneyNumber {
-    margin-left: 20px;
-    margin-top: 10px;
+    display: block;
+    text-align: center;
+    margin-top: 45px;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 #emeraldImage {
-    margin-left: 20px;
-    width: 5%;
-    height: 5%;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 85px;
+    height: auto;
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.timer{
+.timer {
     margin-right: 20px;
 }
 
-#timeEnds{
+#timeEnds {
     margin-right: 20px;
     margin-top: 10px;
 }

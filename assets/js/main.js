@@ -219,7 +219,7 @@ function theClock() {
   mm = (mm < 10) ? "0" + mm : mm;
   ss = (ss < 10) ? "0" + ss : ss;
   day = (day < 10) ? "0" + day : day;
-  mo = (mo < 10) ? "0" + mo : mo;
+  mo = (mo < 10) ? "0" + mo : mo; //operand,  (condition ? if true : if false);
 
   let timeOut = `${hh}:${mm}:${ss}`;
   let dateOut = `${day}.${mo}.${year}`
@@ -231,6 +231,7 @@ function theClock() {
 
 
 const weekend = new Date();
+let weekday;
 
 function theDate() {
   console.log("theDate()")
