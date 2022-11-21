@@ -20,10 +20,10 @@ function money() {
   amount = Number(document.getElementById("moneyPlaceholder").value);
 
   if (amount >= 1) {
-    localStorage.setItem("amount", amount);
+    sessionStorage.setItem("amount", amount);
 
     console.log(amount);
-    
+
     return true;
   }
 
@@ -52,7 +52,7 @@ let seconds = null;
 
 function numberCheck(evt) {
   let check = (evt.which) ? evt.which : evt.keyCode
-  if (check > 31 && (check < 48 || check > 57 ) || check == 44 || check == 46)
+  if (check > 31 && (check < 48 || check > 57) || check == 44 || check == 46)
     return false;
   return true;
 }
@@ -94,7 +94,15 @@ function timeUpdate() {
   //gets the information for when the timer ends
 
   let timesUp = expDate;
-  document.querySelector("#timeEnds").innerText = `Time's up ${expDate.getHours()}:${expDate.getMinutes()}:${expDate.getSeconds()}`;
+  let h = expDate.getHours();
+  let m = expDate.getMinutes();
+  let s = expDate.getSeconds();
+
+  h = (h < 10) ? "0" + h : h;
+  m = (m < 10) ? "0" + m : m;
+  s = (s < 10) ? "0" + s : s;
+
+  document.querySelector("#timeEnds").innerText = `Time's up ${h}:${m}:${s}`;
   //shows when the timer ends
 }
 
@@ -123,10 +131,11 @@ function countdown() {
       clearInterval(timer);
     } //alerts when time is up
 
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
 
+    document.getElementById("countdownOut").innerHTML = `${hours}:${minutes}:${seconds}`;
   }
 
 }
@@ -201,7 +210,7 @@ function theClock() {
 
   /*const full_date = new Date().toLocaleDateString(); //Date String
   const full_time = new Date().toLocaleTimeString(); // Time String*/
-  //Lättare sätt att göra allt nedanför
+  //Annat sätt att göra allt nedanför
 
   let date = new Date();
   let day = date.getDate();
@@ -250,7 +259,7 @@ const closeWeekendTimer = setInterval(closeWeekend, 1000);
 //Stänger sidan ifall veckoslut
 function closeWeekend() {
   if (isWeekend() == true) {
-    localStorage.setItem("weekday", weekday);
+    sessionStorage.setItem("weekday", weekday);
     clearInterval(closeWeekendTimer);
     window.open("../pages/closed.html", "_self");
   }

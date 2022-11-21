@@ -2,9 +2,7 @@ document.querySelector("#buttonBack").addEventListener('click', function (evt) {
     window.open("../homepage/index.html", "_self")
 });
 
-const timerGet = new Date();
-
-weekday = localStorage.getItem("weekday");
+weekday = sessionStorage.getItem("weekday");
 document.getElementById("weekday").value = weekday;
 console.log(weekday)
 
@@ -14,6 +12,7 @@ timerOpen();
 
 function timerOpen() {
     console.log("timerOpen");
+    let timerGet = new Date();
     let h = timerGet.getHours();
     let m = timerGet.getMinutes();
     let s = timerGet.getSeconds();
