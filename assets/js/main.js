@@ -1,6 +1,10 @@
 /* Site-wide JS i den här filen (t.ex. huvudmenyn) */
 console.log("main.js init");
 
+
+
+
+
 //the function that checks the age and if underage exits the site with a promt
 function ageCheck() {
   let ageCheck = confirm("Do you confirm that you are 18 or older?");
@@ -48,19 +52,23 @@ let minutes = null;
 let seconds = null;
 
 // -----------------------------------------------------------------------------------------------------
-// NEEDS FIX!!!!!!!!!
+
 
 function numberCheck(evt) {
   let check = (evt.which) ? evt.which : evt.keyCode
-  if (check > 31 && (check < 48 || check > 57 ) || check == 44 || check == 46)
-    return false;
-  return true;
+  if ((check <= 31) || (check >= 48 && check <= 57 ) || (check === 44) || (check === 46))
+    return true; 
+  return false;
 }
 
+
+//if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
 // -----------------------------------------------------------------------------------------------------
 
 //44 AND 46 ASC FOR , AND .
-// evt evaluates the first operand. If that evaluation returns true, the second operand is returned. If false, the third is returned.
+// evt evaluates the first operand. If that evaluation returns true, the second operand is returned. If false, the third is returned.´
+// so with this code it first checks if the inputs ASCII code is more than 31 (the base codes) and if true checks if it between 48-57 (the numbers keys)
+//and also allows 44 and 46 (, and .) and if these are not true returns false and wont allow the input
 
 function timeUpdate() {
   let select = document.getElementById('amountOfTime');
