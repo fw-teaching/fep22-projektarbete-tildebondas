@@ -42,10 +42,7 @@ let time = null;
 let change = null;
 let timer = null;
 let timeWhen;
-// let expDate = null;
-//let dateEnd = null;
-//let dateStart = null;
-//let timeRemaining = null;
+
 let days = null;
 let hours = null;
 let minutes = null;
@@ -140,60 +137,6 @@ function countdown() {
 }
 /*
 
-function countdown(dateEnd) {
-
-  dateEnd = new Date(dateEnd);
-  dateEnd = dateEnd.getTime();
-
-  if (isNaN(dateEnd)) {
-    return;
-  }
-  //resetes the intervall if a new time is given before the prevoius one has run out
-  if (timer != null) {
-    clearInterval(timer);
-  }
-  timer = setInterval(calculate, 1000);
-  //makes it update every sec
-
-
-  //gets entire date to be able to later write out the time that the timer ends on
-  function calculate() {
-    dateStart = new Date();
-    dateStart = new Date(dateStart.getFullYear(),
-      dateStart.getMonth(),
-      dateStart.getDate(),
-      dateStart.getHours(),
-      dateStart.getMinutes(),
-      dateStart.getSeconds());
-    timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
-    //changes milisecs to normal time
-    if (timeRemaining >= 0) {
-      timeRemaining = (timeRemaining % 86400);
-      hours = parseInt(timeRemaining / 3600);
-      timeRemaining = (timeRemaining % 3600);
-      minutes = parseInt(timeRemaining / 60);
-      timeRemaining = (timeRemaining % 60);
-      seconds = parseInt(timeRemaining);
-      //so the time starts "right"
-      document.getElementById("hours").innerHTML = parseInt(hours);
-      document.getElementById("minutes").innerHTML = (minutes);
-      document.getElementById("seconds").innerHTML = (seconds);
-
-
-      if (hours == 0 && minutes == 0 && seconds == 0) {
-        alert("times up!")
-      } //alerts when time is up
-
-
-    } else {
-      return;
-    }
-  }
-  //used to dispaly the timer
-  function display(hours, minutes, seconds) { }
-
-
-}
 
 */
 function timesUp() {
@@ -202,7 +145,6 @@ function timesUp() {
 
 }
 
-//some of the code from: source https://codepen.io/mathew-c/pen/waXWvO
 
 function theClock() {
   console.log("theClock()");
