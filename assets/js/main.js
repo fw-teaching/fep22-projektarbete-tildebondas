@@ -53,15 +53,9 @@ let seconds = null;
 
 function numberCheck(evt) {
   let check = (evt.which) ? evt.which : evt.keyCode
-<<<<<<< HEAD
-  if (check > 31 && (check < 48 || check > 57) || check == 44 || check == 46)
-    return false;
-  return true;
-=======
   if ((check <= 31) || (check >= 48 && check <= 57 ) || (check === 44) || (check === 46))
     return true; 
   return false;
->>>>>>> 9e19ae27fa4bfe1d51dd56fec3e8d107d35e867a
 }
 
 
