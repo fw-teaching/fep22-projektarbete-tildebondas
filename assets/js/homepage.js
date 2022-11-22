@@ -17,6 +17,8 @@ function websiteLoad() {
   closeWeekend();
 }
 
+websiteLoad();
+
 //Förnamn, efternamn
 function inputName() {
   console.log("inputName()");
@@ -42,6 +44,10 @@ function inputName() {
     theClock();
 
     console.log(fornamn, efternamn, username);
+
+    document.cookie = `fornamn = ${fornamn}; SameSite = lax`
+    document.cookie = `efternamn = ${efternamn}; SameSite = lax`
+    document.cookie = `username = ${username}; SameSite = lax`
   }
 }
 
