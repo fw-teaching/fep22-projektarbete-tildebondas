@@ -12,6 +12,7 @@ function ageCheck() {
     alert("Underage gambling is not allowed!")
     window.close();
   }
+  
 }
 
 let amount;
