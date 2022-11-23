@@ -4,7 +4,6 @@ console.log("main.js init");
 
 
 
-
 //the function that checks the age and if underage exits the site with a promt
 function ageCheck() {
   let ageCheck = confirm("Do you confirm that you are 18 or older?");
