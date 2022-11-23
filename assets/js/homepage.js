@@ -6,12 +6,6 @@ document.querySelector("#amountOfTime").addEventListener('change', function (evt
 
 //Funktion som körs när huvudsidan laddas
 function websiteLoad() {
-  document.getElementById("website-output").style.display = 'none'; //Gömmer webbsidan
-  document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
-  document.getElementById("amountOfTime").style.display = 'none'; //Gömmer tidsval
-  document.getElementById("howLong").style.display = 'none'; //Gömmer counter
-  document.getElementById("money").style.display = 'none'; //Gömmer emerald counter
-
   weekday = weekend.getDay();
   document.querySelector('#weekday').value = weekday;
   closeWeekend();
@@ -28,14 +22,14 @@ function inputName() {
 
   //Displayar error ifall ena fältet eller båda är tomt
   if (fornamn == 0 || efternamn == 0) {
-    document.getElementById("errorMsg").style.display = ''; //Displayar error
+    document.getElementById("errorMsg").style.display = 'block'; //Displayar error
   }
 
   //Annars genereras username, sidan laddas
   else {
     let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
     localStorage.setItem("username", username);
-    document.getElementById("website-output").style.display = ''; //Displayar webbsidan
+    document.getElementById("website-output").style.display = 'block'; //Displayar webbsidan
     document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
     document.querySelector("#username").innerText = username;
     document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
@@ -60,12 +54,12 @@ function hideMoney() {
     document.getElementById("moneyPlaceholder").style.display = 'none';
     document.getElementById("okButt").style.display = 'none';
 
-    document.getElementById("money").style.display = ''; //Emerald counter
+    document.getElementById("emeraldImage").style.display = 'block'; //Emerald counter
 
     document.getElementById("moneyNumber").innerText = amount;
 
-    document.getElementById("amountOfTime").style.display = '';
-    document.getElementById("howLong").style.display = '';
+    document.getElementById("amountOfTime").style.display = 'inline';
+    document.getElementById("howLong").style.display = 'block';
   }
 }
 

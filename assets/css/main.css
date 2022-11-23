@@ -164,6 +164,7 @@ body {
 }
 
 #emeraldImage {
+    display:none;
     margin-left: 10px;
     margin-top: 20px;
     width: 85px;
@@ -179,4 +180,38 @@ body {
 #timeEnds {
     margin-right: 20px;
     margin-top: 10px;
+}
+
+.slider {
+    appearance: none;
+    opacity: .7;
+    height: 15px;
+    width: 500px;
+    transition: opacity .1s;
+    background: #d3d3d3;
+    outline: none;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 25px;
+    background: rgb(57, 145, 57);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 25px;
+    background: rgb(57, 145, 57);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+
 }
