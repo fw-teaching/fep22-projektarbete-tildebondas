@@ -12,19 +12,22 @@ if (localStorage.getItem('visited')) {
 }
 //counts how many times the user has visited the site and stores it on local storage
 
-
+let userAgent = navigator.userAgent;
 let language = navigator.language;
 console.log("the browser language is " + language)
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    // true for mobile device
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)){
+    
     console.log("user is on a mobile device");
   }else{
-    // false for not mobile device
+    
     console.log("user is on a computer");
   }
 
-  let userAgent = navigator.userAgent;
+  //checks if the navigator.userAgenets uses any of the keywords.
+  //the test checks the string and if ts a match it returns true
+  //the i makes it so it ignores lower and uppercase  letters and treats them the same
+
   let browserName;
   
   if(userAgent.match(/chrome|chromium|crios/i)){
@@ -44,7 +47,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
    console.log("the user is on " + browserName)        
 
 
-
+//checks if the key words match the navigator.userAgent and if it matches the correct phrase outputs the correct name
 
 
 /*function getLocation() {
