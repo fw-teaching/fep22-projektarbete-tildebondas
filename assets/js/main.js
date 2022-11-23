@@ -1,9 +1,6 @@
 /* Site-wide JS i den här filen (t.ex. huvudmenyn) */
 console.log("main.js init");
 
-
-
-
 //the function that checks the age and if underage exits the site with a promt
 function ageCheck() {
   let ageCheck = confirm("Do you confirm that you are 18 or older?");
@@ -23,7 +20,7 @@ function money() {
   amount = Number(document.getElementById("moneyPlaceholder").value);
 
   if (amount >= 1) {
-    sessionStorage.setItem("amount", amount);
+    localStorage.setItem("amount", amount);
 
     console.log(amount);
 
@@ -137,7 +134,7 @@ function countdown() {
 
     hours = (hours < 10) ? "0" + hours : hours;
     minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
+    seconds = (seconds < 10) ? "0" + seconds : seconds; //sätter 0 framför ifall t.ex. 5 sekunder kvar
 
     document.getElementById("countdownOut").innerHTML = `${hours}:${minutes}:${seconds}`;
   }
