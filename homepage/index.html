@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/homepage.css">
     <script src="../assets/js/main.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
+    <script src="../assets/js/storage.js" defer></script>
     <script src="../assets/js/homepage.js" defer></script>
     <title>CasinoCraft</title>
 </head>
@@ -32,7 +33,7 @@
             <p class="rainbow-text" id="username"></p>
 
             <p id="howMany">How many emeralds would you like to put in?</p>
-            <input id="moneyPlaceholder" placeholder="Amount">
+            <input id="moneyPlaceholder" placeholder="Amount" onkeypress="return numberCheck(event)">
             <input class="button" id="okButt" type="button" value="OK" onclick="hideMoney()">
 
             <p id="howLong">How long would you like to play?</p>
