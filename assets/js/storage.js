@@ -18,7 +18,7 @@ console.log("the browser language is " + language)
 
 let device;
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)){
+if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
     
     console.log("user is on a mobile device");
     device = "mobile";
@@ -32,23 +32,23 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAge
   //the test checks the string and if ts a match it returns true
   //the i makes it so it ignores lower and uppercase  letters and treats them the same
 
-  let browserName;
+  let browser;
   
-  if(userAgent.match(/chrome|chromium|crios/i)){
-      browserName = "chrome";
+  if(userAgent.match(/edg/i)){
+      browser = "chrome";
     }else if(userAgent.match(/firefox|fxios/i)){
-      browserName = "firefox";
+      browser = "firefox";
     }  else if(userAgent.match(/safari/i)){
       browserName = "safari";
     }else if(userAgent.match(/opr\//i)){
-      browserName = "opera";
-    } else if(userAgent.match(/edg/i)){
-      browserName = "edge";
+      browser = "opera";
+    } else if(userAgent.match(/chrome|chromium|crios/i)){
+      browser = "edge";
     }else{
-      browserName="No browser detection";
+      browser="No browser detection";
     }
   
-   console.log("the user is on " + browserName)        
+   console.log("the user is on " + browser)        
 
 
 //checks if the key words match the navigator.userAgent and if it matches the correct phrase outputs the correct name
@@ -79,7 +79,7 @@ console.log("the screen resolution is " + width + "px * " + height + "px")
 //writes in the console the browsers current size
 
 localStorage.setItem('device', device);
-localStorage.setItem('browser', browserName);
+localStorage.setItem('browser', browser);
 localStorage.setItem('language', language);
 //saves the info to be able to "sell" it later :)
 
