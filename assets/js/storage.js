@@ -16,12 +16,16 @@ let userAgent = navigator.userAgent;
 let language = navigator.language;
 console.log("the browser language is " + language)
 
+let device;
+
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)){
     
     console.log("user is on a mobile device");
+    device = "mobile";
   }else{
     
     console.log("user is on a computer");
+    device = "computer"
   }
 
   //checks if the navigator.userAgenets uses any of the keywords.
@@ -49,6 +53,40 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAge
 
 //checks if the key words match the navigator.userAgent and if it matches the correct phrase outputs the correct name
 
+
+
+const getLocation = () => {
+
+  //checks if the user allows geolocation and returns in the console the cordinates if true
+
+  const succes = (position) => {
+    let coords = position.coords;
+    console.log("The users latitude is " + coords.latitude)
+    console.log("The users longitude is " + coords.longitude)
+  }
+//if user does not allow
+  const error = () => {
+    console.log("user does now allow location")
+  }
+  
+  navigator.geolocation.getCurrentPosition(succes, error);
+}
+
+let height = window.screen.height;
+let width = window.screen.width
+
+console.log("the screen resolution is " + width + "px * " + height + "px")
+//writes in the console the browsers current size
+
+localStorage.setItem('device', device);
+localStorage.setItem('browser', browserName);
+localStorage.setItem('language', language);
+//saves the info to be able to "sell" it later :)
+
+/*
+console.log(window.screen.availHeight)
+console.log(window.screen.availWidth)
+*/
 
 /*function getLocation() {
     if (navigator.geolocation) {
