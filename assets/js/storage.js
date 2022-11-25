@@ -45,7 +45,7 @@ if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
     } else if(userAgent.match(/chrome|chromium|crios/i)){
       browser = "edge";
     }else{
-      browser="No browser detection";
+      browser="can't detect browser";
     }
   
    console.log("the user is on " + browser)        

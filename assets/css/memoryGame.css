@@ -10,6 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
 
 }
 
@@ -26,7 +27,8 @@ section{
     backface-visibility: hidden;
     height: 100px;
     width: 100px;
-    pointer-events: none;
+    cursor: pointer;
+    
 }
 .card{
     position: relative;
@@ -39,7 +41,7 @@ section{
 .face,
 .back{
     position: absolute;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 
@@ -49,4 +51,32 @@ section{
 
 .cardStay{
     transform: rotateY(180deg);
+}
+
+div{
+    cursor: pointer;
+}
+
+/* Site-wide styling here */
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    src: url('../Fonts/MinecraftRegular-Bmg3.otf');
+}
+
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    font-weight: bold;
+    src: url('../Fonts/MinecraftBold-nMK1.otf');
+}
+
+p{
+    font-size:30px;
+    color: darkblue;
+}
+
+.flipped,
+.matched{
+    pointer-events: none;
 }
