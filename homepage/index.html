@@ -17,9 +17,29 @@
 <body>
     <!-- onload="ageCheck(), getLocation()"> -->
 
-    <div>
+    <div id="TitleBox">
         <p id="Title">CasinoCraft</p>
-        <div id="hamburger">☰</div>
+        <div class="basicBox" id="hamburger">
+            ☰
+            <div id="menu">
+                <div id="colorChanger" class="basicBox">
+                    <label for="R">R</label>
+                    <input id="R" color="R" class="slider" type="range" min="0" max="255">
+            
+                    <label for="G">G</label>
+                    <input id="G" color="G" class="slider" type="range" min="0" max="255">
+            
+                    <label for="B">B</label>
+                    <input id="B" color="B" class="slider" type="range" min="0" max="255">
+            
+                    <input type="button" value="Reset">
+            
+                    <select id="bgSelect">
+            
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="basicBox" id="name-check">

@@ -41,7 +41,7 @@ function updateSlider() {
 
     sliders.forEach((elem) => {
         colorValue[elem.getAttribute('color')] = elem.value;
-        document.querySelector(`div.basicBox label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
+        document.querySelector(`div#colorChanger label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
     });
 
     updateColor(colorValue.R, colorValue.G, colorValue.B);
@@ -50,7 +50,7 @@ function updateSlider() {
 
 
 //reset button
-document.querySelector("div.basicBox input[type=button]").addEventListener('click', () => {
+document.querySelector("div#colorChanger input[type=button]").addEventListener('click', () => {
     colorValue = { R: 27, G: 87, B: 27 };
     document.querySelector("#R").value = colorValue.R;
     document.querySelector("#G").value = colorValue.G;
@@ -101,11 +101,23 @@ bgSelect.addEventListener('change', (evt) => {
 
     sliders.forEach(elem => {
         elem.value = bgColors[evt.target.selectedIndex].RGB[elem.getAttribute('color')]
-        document.querySelector(`div.basicBox label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
+        document.querySelector(`div#colorChanger label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
     });
 
 
     updateColor(bgColors[evt.target.selectedIndex].RGB.R, bgColors[evt.target.selectedIndex].RGB.G, bgColors[evt.target.selectedIndex].RGB.B);
 
     localStorage.setItem('bgColor', evt.target.selectedIndex);
+});
+
+
+
+/*
+---------------
+HAMBURGER MENU
+---------------
+*/
+document.querySelector("#hamburger").addEventListener('click', () => {
+    console.log("menu")
+    document.querySelector("#colorChanger").style.display = "block";
 });

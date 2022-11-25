@@ -37,7 +37,6 @@ body {
     margin-right: auto;
     text-align: center;
     background-color: rgb(27, 87, 27);
-    color: white;
     padding: 20px;
     width: 30%;
     border: solid 5px black;
@@ -52,9 +51,15 @@ body {
     font-family: Minecraft, Arial, Helvetica, sans-serif;
     font-size: 25px;
     padding: 15px 25px 15px 25px;
-    color: white;
     border: none;
     cursor: pointer;
+    opacity: .7;
+    color: white;
+}
+
+.button:hover{
+    transition: .2s;
+    opacity: 1;
 }
 
 #clockbox {
@@ -62,7 +67,6 @@ body {
     flex-direction: column;
     font-size: 40px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
     position: fixed;
     text-align: right;
     bottom: 0px;
@@ -98,19 +102,22 @@ body {
 #Title {
     text-align: center;
     font-weight: bold;
-    color: white;
     font-size: 100px;
     text-shadow:
         -5px -5px 0 #000,
         5px -5px 0 #000,
         -5px 5px 0 #000,
         5px 5px 0 #000,
-        5px 5px 10px black;
+        7px 7px 7px black;
     ;
     margin: 2% 0 0 0;
-    align-items: center;
+}
+
+#TitleBox{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    display: inline-block;
+    align-items: baseline;
 }
 
 .invisible input {
@@ -126,7 +133,6 @@ body {
     flex-direction: column;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
     position: fixed;
     text-align: right;
     top: 0;
@@ -144,7 +150,6 @@ body {
     display: grid;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
     position: fixed;
     text-align: left;
     top: 0;
@@ -187,7 +192,19 @@ body {
 }
 
 #hamburger {
-    display: inline;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    width: 30px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px black;
+    cursor: pointer;
+    opacity: .7;
+}
+
+#hamburger:hover{
+    transition: .2s;
+    opacity: 1;
 }
 
 .slider {
@@ -222,4 +239,8 @@ body {
     border: 1px solid black;
     border-radius: 4px;
 
+}
+
+#colorChanger {
+    display:none;
 }

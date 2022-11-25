@@ -17,7 +17,6 @@
     margin-right: auto;
     text-align: center;
     background-color: rgb(27, 87, 27);
-    color: white;
     padding: 20px;
     width: 30%;
 }
@@ -55,7 +54,7 @@
     width: fit-content;
     font-size: 20px;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
-    color: white;
+    color:white;
     background-color: rgb(27, 87, 27);
     border: 1;
     border-color: white;

@@ -18,7 +18,9 @@ function ageCheck() {
 let amount;
 function money() {
 
-  amount = Number(document.getElementById("moneyPlaceholder").value);
+  amount = document.getElementById("moneyPlaceholder").value;
+  amount = amount.replace(',', '.');
+  amount = Number(amount);
 
   if (amount >= 1) {
     localStorage.setItem("amount", amount);
@@ -28,9 +30,7 @@ function money() {
     return true;
   }
 
-  else {
-    alert("Insert amount")
-  }
+  else alert("Minimum 1 emerald. Cheapo");
 }
 
 //all variables for the codes
