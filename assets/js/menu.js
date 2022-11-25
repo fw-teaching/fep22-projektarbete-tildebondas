@@ -8,8 +8,14 @@ let colorValue = { R: 27, G: 87, B: 27 };
 const sliderArr = [];
 const sliders = document.querySelectorAll('.slider');
 
+sliders.forEach((elem) => {
+    sliderArr.push({ color: elem.getAttribute('color'), value: elem.getAttribute('value') })
 
-//pulls from localStorage
+    elem.addEventListener('input', updateSlider);
+    console.log(elem.value);
+});
+
+//pulls from localStorage if defined
 if (localStorage.getItem('R') != undefined) {
     colorValue.R = localStorage.getItem('R')
     colorValue.G = localStorage.getItem('G')
@@ -20,6 +26,27 @@ if (localStorage.getItem('R') != undefined) {
 
     updateColor(colorValue.R, colorValue.G, colorValue.B);
 }
+
+function updateColor(R, G, B) {
+
+    document.querySelectorAll('.basicBox').forEach(elem => {
+        elem.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+        localStorage.setItem('R', R);
+        localStorage.setItem('G', G);
+        localStorage.setItem('B', B);
+    });
+}
+
+function updateSlider() {
+
+    sliders.forEach((elem) => {
+        colorValue[elem.getAttribute('color')] = elem.value;
+        document.querySelector(`div.basicBox label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
+    });
+
+    updateColor(colorValue.R, colorValue.G, colorValue.B);
+}
+
 
 
 //reset button
@@ -35,48 +62,6 @@ document.querySelector("div.basicBox input[type=button]").addEventListener('clic
 
     updateSlider();
 })
-
-sliders.forEach((elem) => {
-    sliderArr.push({ color: elem.getAttribute('color'), value: elem.getAttribute('value') })
-    //elem.setAttribute('value', colorValue[elem.color]);
-
-    elem.addEventListener('input', updateSlider);
-    console.log(elem.value);
-});
-
-function updateColor(R, G, B) {
-    /* for (i in sliderArr){
-         sliderArr[i].value = document.querySelector(`.slider input[color='${sliderArr[i].color}']`).value;
-     } */
-
-    // sliderArr.forEach(elem => elem.value = document.querySelector(`.slider input[color='${elem.color}']`).value);  //hjälp
-
-    document.querySelectorAll('.basicBox').forEach(elem => {
-        elem.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
-        localStorage.setItem('R', colorValue.R);
-        localStorage.setItem('G', colorValue.G);
-        localStorage.setItem('B', colorValue.B);
-    });
-}
-
-function updateSlider() {
-    colorValue = { R: colorValue.R = document.querySelector("#R").value, G: colorValue.G = document.querySelector("#G").value, B: document.querySelector("#B").value } //fixa så den använder array iställe
-
-for(elem in sliderArr){
-    for (i in colorValue){
-        colorValue[elem]
-    }
-}
-
-//----------------------------------------------------------------------------------HÄR
-
-    sliderArr.forEach((elem) => {
-        document.querySelector(`div.basicBox label[for='${elem.color}']`).innerText = colorValue[elem.color];
-        elem.value = colorValue[elem.color];
-    });
-
-    updateColor(colorValue.R, colorValue.G, colorValue.B);
-}
 
 
 
@@ -106,11 +91,18 @@ if (localStorage.getItem('bgColor') != undefined) {
     bgSelect.value = bgColors[localStorage.getItem('bgColor')].color;
 };
 
+
+//Ändrar theme, samt byter plats på sliders för det var lättare än att omskriva updateSlider() bara för detta syfte
 bgSelect.addEventListener('change', (evt) => {
     console.log("bg change")
     console.log(evt.target.selectedIndex);
 
     document.body.style.backgroundImage = `url(${bgColors[evt.target.selectedIndex].url})`;
+
+    sliders.forEach(elem => {
+        elem.value = bgColors[evt.target.selectedIndex].RGB[elem.getAttribute('color')]
+        document.querySelector(`div.basicBox label[for='${elem.getAttribute('color')}']`).innerText = elem.value;
+    });
 
 
     updateColor(bgColors[evt.target.selectedIndex].RGB.R, bgColors[evt.target.selectedIndex].RGB.G, bgColors[evt.target.selectedIndex].RGB.B);
