@@ -117,7 +117,27 @@ bgSelect.addEventListener('change', (evt) => {
 HAMBURGER MENU
 ---------------
 */
-document.querySelector("#hamburger").addEventListener('click', () => {
+const menu = document.querySelector("#menu");
+menu.style.width = "0px";
+document.querySelector("#colorChanger").style.opacity = '0';
+
+
+document.querySelector("#burgerIcon").addEventListener('click', () => {
     console.log("menu")
-    document.querySelector("#colorChanger").style.display = "block";
+
+    if (menu.style.width == "0px") {
+        document.querySelector("#hamburger").style.opacity = 1;
+        menu.style.width = '270px';
+        document.querySelector("#colorChanger").style.opacity = '1';
+        menu.style.padding = "5px";
+        menu.style.border = "solid 2px black";
+
+    }
+    else {
+        document.querySelector("#hamburger").style.opacity = "";
+        menu.style.width = '0px';
+        document.querySelector("#colorChanger").style.opacity = '0';
+        menu.style.padding = "0";
+        menu.style.border = "0"
+    }
 });
