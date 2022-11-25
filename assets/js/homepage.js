@@ -1,5 +1,5 @@
-document.querySelector("#buttonEnter").addEventListener('click', (evt) => inputName());
-document.querySelector("#amountOfTime").addEventListener('change', function (evt){
+document.querySelector("#buttonEnter").addEventListener('click', inputName);
+document.querySelector("#amountOfTime").addEventListener('change', () => {
   timeUpdate();
   hideTime();
 });
@@ -13,12 +13,16 @@ function websiteLoad() {
 
 websiteLoad();
 
-//Förnamn, efternamn
+let fornamn;
+let efternamn;
+let username;
+
+//Förnamn, efternamn, username
 function inputName() {
   console.log("inputName()");
-  let fornamn = document.querySelector("#fornamn").value;
-  let efternamn = document.querySelector("#efternamn").value;
-
+  fornamn = document.querySelector("#fornamn").value;
+  efternamn = document.querySelector("#efternamn").value;
+  username;
 
   //Displayar error ifall ena fältet eller båda är tomt
   if (fornamn == 0 || efternamn == 0) {
@@ -27,23 +31,25 @@ function inputName() {
 
   //Annars genereras username, sidan laddas
   else {
-    let username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
-    localStorage.setItem("username", username);
-    document.getElementById("website-output").style.display = 'block'; //Displayar webbsidan
-    document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
-    document.querySelector("#username").innerText = username;
-    document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
-    document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
+    username = efternamn.replace(/\s/g, '').substring(0, 7).toLowerCase() + fornamn.replace(/\s/g, '').substring(0, 1).toLowerCase(); //Lagar ett username, omvandlar till små bokstäver och tar bort alla mellanslag
+
+    generateHomepage();
 
     theClock();
 
     console.log(fornamn, efternamn, username);
 
-    document.cookie = `fornamn = ${fornamn}; SameSite = lax`
-    document.cookie = `efternamn = ${efternamn}; SameSite = lax`
     document.cookie = `username = ${username}; SameSite = lax`
   }
 }
+
+function generateHomepage() {
+  document.getElementById("website-output").style.display = 'block'; //Displayar webbsidan
+  document.querySelector("#name-box").innerText = `Welcome ${fornamn}! Your newly generated username is:`;
+  document.querySelector("#username").innerText = username;
+  document.getElementById("name-check").style.display = 'none'; //Gömmer name-check
+  document.getElementById("errorMsg").style.display = 'none'; //Gömmer error
+};
 
 function hideMoney() {
 
