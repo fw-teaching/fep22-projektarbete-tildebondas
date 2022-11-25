@@ -142,7 +142,7 @@ const cardCheck = (evt) => {
             console.log("wrong")
             flipped.forEach(card => {
                 card.classList.remove('flipped');
-                setTimeout(() => card.classList.remove('toggleCard'), 1200);
+                setTimeout(() => card.classList.remove('toggleCard'), 800);
                 //adds a little delay to the backflip so it doesnt happen to fast
             })
         }
@@ -171,7 +171,7 @@ const gameCheck = () =>{
         
        let again = confirm('Do you wish to play again?');
        if (again){
-        generator();
+        location.reload();
        }else{
         window.close();
        }
