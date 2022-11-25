@@ -2,6 +2,7 @@ console.log("storage");
 
 let visiting = localStorage.getItem('visited');
 
+
 if (localStorage.getItem('visited')) {
 
     console.log("the user has visited this site " + visiting + " times");
@@ -35,7 +36,7 @@ if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
   let browser;
   
   if(userAgent.match(/edg/i)){
-      browser = "chrome";
+      browser = "edge";
     }else if(userAgent.match(/firefox|fxios/i)){
       browser = "firefox";
     }  else if(userAgent.match(/safari/i)){
@@ -43,7 +44,7 @@ if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
     }else if(userAgent.match(/opr\//i)){
       browser = "opera";
     } else if(userAgent.match(/chrome|chromium|crios/i)){
-      browser = "edge";
+      browser = "chrome";
     }else{
       browser="can't detect browser";
     }
