@@ -11,12 +11,3 @@ body{
     flex-direction: column;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
 }
-img {
-    width: 20%;
-    height: auto;
-  }
-
-.boardRock{
-    display: grid;
-
-}
