@@ -1,4 +1,20 @@
 document.querySelector("#buttonEnter").addEventListener('click', inputName);
+
+document.addEventListener('keydown', function pressEnter(evt) {
+  if (evt.key === 'Enter') {
+    if (inputName()) {
+      document.removeEventListener('keydown', pressEnter)
+      document.addEventListener('keydown', function Button2(evt) {
+        if (evt.key === 'Enter') {
+          if (hideMoney()) document.removeEventListener('keydown', Button2)
+        }
+      })
+    }
+  }
+})
+
+document.querySelector("#okButt").addEventListener('click', hideMoney);
+
 document.querySelector("#amountOfTime").addEventListener('change', () => {
   timeUpdate();
   hideTime();
@@ -39,7 +55,9 @@ function inputName() {
 
     console.log(fornamn, efternamn, username);
 
-    document.cookie = `username = ${username}; SameSite = lax`
+    document.cookie = `username = ${username}; SameSite = lax`;
+
+    return true;
   }
 }
 
@@ -66,6 +84,8 @@ function hideMoney() {
 
     document.getElementById("amountOfTime").style.display = 'inline';
     document.getElementById("howLong").style.display = 'block';
+
+    return true;
   }
 }
 

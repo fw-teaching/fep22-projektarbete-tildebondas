@@ -119,13 +119,14 @@ HAMBURGER MENU
 */
 const menu = document.querySelector("#menu");
 menu.style.width = "0px";
+menu.style.visibility = "hidden";
 document.querySelector("#colorChanger").style.opacity = '0';
-
 
 document.querySelector("#burgerIcon").addEventListener('click', () => {
     console.log("menu")
 
     if (menu.style.width == "0px") {
+        menu.style.visibility = "visible";
         document.querySelector("#hamburger").style.opacity = 1;
         menu.style.width = '270px';
         document.querySelector("#colorChanger").style.opacity = '1';
@@ -134,6 +135,7 @@ document.querySelector("#burgerIcon").addEventListener('click', () => {
 
     }
     else {
+        menu.style.visibility = "hidden";
         document.querySelector("#hamburger").style.opacity = "";
         menu.style.width = '0px';
         document.querySelector("#colorChanger").style.opacity = '0';
