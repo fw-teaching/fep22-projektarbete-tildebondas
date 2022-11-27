@@ -11,3 +11,26 @@ body{
     flex-direction: column;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
 }
+
+
+.asset{
+    height: 100px;
+}
+
+.playerChoices{
+    display: grid;
+    grid-template-columns: repeat(3,8rem);
+    perspective: 800px;
+}
+
+.choiceComputer{
+    border: 3px solid;
+    height: 200px;
+    width: 300px;
+
+}
+.choice{
+    border: 3px solid;
+    height: 200px;
+    width: 300px;
+}
