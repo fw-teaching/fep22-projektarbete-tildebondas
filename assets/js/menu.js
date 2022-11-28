@@ -49,7 +49,7 @@ function updateSlider() {
 
 
 
-//reset button
+//Reset button
 document.querySelector("div#colorChanger input[type=button]").addEventListener('click', () => {
     colorValue = { R: 27, G: 87, B: 27 };
     document.querySelector("#R").value = colorValue.R;
@@ -118,28 +118,33 @@ HAMBURGER MENU
 ---------------
 */
 const menu = document.querySelector("#menu");
-menu.style.width = "0px";
 menu.style.visibility = "hidden";
 document.querySelector("#colorChanger").style.opacity = '0';
 
+
+//Öppnar meny med animation
 document.querySelector("#burgerIcon").addEventListener('click', () => {
     console.log("menu")
 
-    if (menu.style.width == "0px") {
+    if (menu.style.visibility == "hidden") {
         menu.style.visibility = "visible";
         document.querySelector("#hamburger").style.opacity = 1;
         menu.style.width = '270px';
         document.querySelector("#colorChanger").style.opacity = '1';
-        menu.style.padding = "5px";
-        menu.style.border = "solid 2px black";
-
     }
     else {
         menu.style.visibility = "hidden";
         document.querySelector("#hamburger").style.opacity = "";
         menu.style.width = '0px';
         document.querySelector("#colorChanger").style.opacity = '0';
-        menu.style.padding = "0";
-        menu.style.border = "0"
     }
 });
+
+const menuItems = [
+    { name: "Homepage", url: "../homepage/index.html" },
+    { name: "Gallery", url: "../pages/gallery.html" }
+];
+
+menuItems.forEach(elem => {
+    document.querySelector("#links").innerHTML += `<a href="${elem.url}">${elem.name}</a>`
+})
