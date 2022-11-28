@@ -14,21 +14,28 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
 
 }
 
 #big img {
+    max-height: 75%;
     max-width: 50%;
-    max-height: 50%;
 }
 
-#imageBox{
+#imageBox {
     width: fit-content;
+    margin-top: 5%;
+}
+
+#images {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5%;
+}
+
+#galleryHeader {
+    display: block;
 }

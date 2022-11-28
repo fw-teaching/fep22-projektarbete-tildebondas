@@ -17,8 +17,6 @@ function ageCheck() {
     checkUser = false;
     localStorage.setItem('ageCheck', checkUser);
     window.close();
-
-
   }
 
 }
@@ -27,9 +25,14 @@ let amount;
 
 function money() {
 
-  amount = document.getElementById("moneyPlaceholder").value;
-  amount = amount.replace(',', '.');
-  amount = Number(amount);
+  if (localStorage.getItem("amount") != null) {
+    amount = localStorage.getItem("amount")
+  }
+  else {
+    amount = document.getElementById("moneyPlaceholder").value;
+    amount = amount.replace(',', '.');
+    amount = Number(amount);
+  }
 
   //replaces , wth .
 
@@ -75,6 +78,15 @@ function numberCheck(evt) {
 // so with this code it first checks if the inputs ASCII code is more than 31 (the base codes) and if true checks if it between 48-57 (the numbers keys)
 //and also allows 44 and 46 (, and .) and if these are not true returns false and wont allow the input
 
+if (sessionStorage.getItem('finishedSetup') == "true") {
+  timeUpdate();
+  countdown(expDate);
+  theClock();
+  document.querySelector("#hamburger").style.visibility = 'visible';
+  document.getElementById("emeraldImage").style.display = 'block'; //Emerald counter
+  document.getElementById("moneyNumber").innerText = `${localStorage.getItem('amount')}`;
+};
+
 function timeUpdate() {
   let select = document.getElementById('amountOfTime');
   let option = select.options[select.selectedIndex];
@@ -98,8 +110,9 @@ function timeUpdate() {
   if (change == 5) { time = 120; }
   if (change == 6) { time = 150; }
 
-  expDate = new Date(new Date().getTime() + (time * 60 * 1000));
-  localStorage.setItem('expDate', expDate)
+  if (localStorage.getItem('expDate') == null) expDate = new Date(new Date().getTime() + (time * 60 * 1000));
+  else expDate = new Date(localStorage.getItem('expDate'));
+  localStorage.setItem('expDate', expDate);
   //let expDate = localStorage.getItem('expDate');
   //starts the timer when the value is given
   if (change != 0) { countdown(expDate); }
@@ -141,7 +154,7 @@ function countdown() {
     minutes = Math.floor((timeWhen % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((timeWhen % (1000 * 60)) / 1000);
 
-    if (hours == 0 && minutes == 0 && seconds == 0) {
+    if (hours <= 0 && minutes <= 0 && seconds <= 0) {
       alert("times up!")
       clearInterval(timer);
       localStorage.removeItem('expDate');

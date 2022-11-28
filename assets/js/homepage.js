@@ -35,7 +35,6 @@ function loadEverything() {
   document.getElementById("moneyNumber").innerText = `${localStorage.getItem('amount')}`;
   document.getElementById("amountOfTime").style.display = 'inline';
   document.getElementById("howLong").style.display = 'block';
-  theClock();
   hideTime();
 }
 
@@ -125,6 +124,7 @@ function hideTime() {
   console.log("hideTime()");
   document.getElementById("amountOfTime").style.display = 'none';
   document.getElementById("howLong").style.display = 'none';
+  document.querySelector("#hamburger").style.visibility = 'visible';
 
   sessionStorage.setItem('finishedSetup', "true");
 }

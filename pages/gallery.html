@@ -23,7 +23,7 @@
             <div class="basicBox" id="menu">
 
                 <div id="links">
-                    
+
                 </div>
 
                 <div id="colorChanger">
@@ -51,21 +51,70 @@
     </div>
 
     <div class="basicBox" id="imageBox">
-        <img class="thumb" src="../assets/images/gallery/minecraft-g208e04e4c_1280.png"
-            bigimage="../assets/images/gallery/minecraft-g208e04e4c_1280.png">
-        <img class="thumb" src="../assets/images/gallery/minecraft-g86b7c6c08_1280.jpg"
-            bigimage="../assets/images/gallery/minecraft-g86b7c6c08_1280.jpg">
-        <img class="thumb" src="../assets/images/gallery/minecraft-gdb0002806_1280.jpg"
-            bigimage="../assets/images/gallery/minecraft-gdb0002806_1280.jpg">
-        <img class="thumb" src="../assets/images/gallery/nina-rivas-6eL_lMJDwjM-unsplash.jpg"
-            bigimage="../assets/images/gallery/nina-rivas-6eL_lMJDwjM-unsplash.jpg">
-        <img class="thumb" src="../assets/images/gallery/playing-cards-g48c98f02e_1920.jpg"
-            bigimage="../assets/images/gallery/playing-cards-g48c98f02e_1920.jpg">
-        <img class="thumb" src="../assets/images/gallery/social-income-dgpW9LsDS5s-unsplash.jpg"
-            bigimage="../assets/images/gallery/social-income-dgpW9LsDS5s-unsplash.jpg">
+        <p id="galleryHeader">Some of the history of CasinoCraft!</p>
+        <div id="images">
+            <img class="thumb" src="../assets/images/gallery/minecraft-g208e04e4c_1280-THUMB.png"
+                bigimage="../assets/images/gallery/minecraft-g208e04e4c_1280.png">
+            <img class="thumb" src="../assets/images/gallery/minecraft-g86b7c6c08_1280-THUMB.png"
+                bigimage="../assets/images/gallery/minecraft-g86b7c6c08_1280.png">
+            <img class="thumb" src="../assets/images/gallery/minecraft-gdb0002806_1280-THUMB.png"
+                bigimage="../assets/images/gallery/minecraft-gdb0002806_1280.png">
+            <img class="thumb" src="../assets/images/gallery/nina-rivas-6eL_lMJDwjM-unsplash-THUMB.png"
+                bigimage="../assets/images/gallery/nina-rivas-6eL_lMJDwjM-unsplash.png">
+            <img class="thumb" src="../assets/images/gallery/playing-cards-g48c98f02e_1920-THUMB.png"
+                bigimage="../assets/images/gallery/playing-cards-g48c98f02e_1920.png">
+            <img class="thumb" src="../assets/images/gallery/social-income-dgpW9LsDS5s-unsplash-THUMB.png"
+                bigimage="../assets/images/gallery/social-income-dgpW9LsDS5s-unsplash.png">
+        </div>
     </div>
 
     <div id="big"> <img src=""> </div>
+
+
+    <!--Behövs för js koden-->
+    <select class="basicBox" id="amountOfTime">
+        <option value="0">Time</option>
+        <option value="1">15min</option>
+        <option value="2">30min</option>
+        <option value="3">1h</option>
+        <option value="4">1h 30m</option>
+        <option value="5">2h</option>
+        <option value="6">2h 30m</option>
+    </select>
+
+    <!--För amountOfTime-->
+    <div class="invisible">
+        <input title="indexPlaceholder" type="text" id="value">
+        <input title="textPlaceholder" type="text" id="text">
+    </div>
+
+    <div id="money">
+        <div id="moneyNumber"></div>
+        <img id="emeraldImage" alt="Emeralds" src="../assets/images/Emerald.png"></img>
+    </div>
+
+    <div class="countdown">
+        <div id="timeEnds"></div>
+        <div class="timer">
+            <span id="countdownOut"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+    </div>
+
+    <section id="clockbox">
+        <select id="weekday" onchange="theDate()">
+            <option value="0">Söndag</option>
+            <option value="1">Måndag</option>
+            <option value="2">Tisdag</option>
+            <option value="3">Onsdag</option>
+            <option value="4">Torsdag</option>
+            <option value="5">Fredag</option>
+            <option value="6">Lördag</option>
+        </select>
+        <div id="clock"></div>
+        <div id="date"></div>
+    </section>
 
 </body>
 
