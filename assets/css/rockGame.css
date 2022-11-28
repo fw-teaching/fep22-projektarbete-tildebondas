@@ -16,6 +16,27 @@ body{
 .asset{
     height: 100px;
 }
+.assetC{
+    height: 200px;
+    padding-left: 15%;
+
+}
+.boxC{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.assetP{
+    height: 200px;
+    padding-left: 15%;
+
+}
+.boxP{
+    display: flex;
+    justify-content: center;
+    
+}
 
 .playerChoices{
     display: grid;
