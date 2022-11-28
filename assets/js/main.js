@@ -2,25 +2,36 @@
 console.log("main.js init");
 
 //the function that checks the age and if underage exits the site with a promt
+let checkUser = new Boolean;
 function ageCheck() {
   let ageCheck = confirm("Do you confirm that you are 18 or older?");
   if (ageCheck) {
     alert("Welcome and have fun!")
+    checkUser = true;
+    localStorage.setItem('ageCheck', checkUser);
+
 
   }
   else {
     alert("Underage gambling is not allowed!")
+    checkUser = false;
+    localStorage.setItem('ageCheck', checkUser);
     window.close();
+
+
   }
-  
+
 }
 
 let amount;
+
 function money() {
 
   amount = document.getElementById("moneyPlaceholder").value;
   amount = amount.replace(',', '.');
   amount = Number(amount);
+
+  //replaces , wth .
 
   if (amount >= 1) {
     localStorage.setItem("amount", amount);
@@ -50,8 +61,8 @@ let seconds = null;
 
 function numberCheck(evt) {
   let check = (evt.which) ? evt.which : evt.keyCode
-  if ((check <= 31) || (check >= 48 && check <= 57 ) || (check === 44) || (check === 46))
-    return true; 
+  if ((check <= 31) || (check >= 48 && check <= 57) || (check === 44) || (check === 46))
+    return true;
   return false;
 }
 
@@ -88,6 +99,8 @@ function timeUpdate() {
   if (change == 6) { time = 150; }
 
   expDate = new Date(new Date().getTime() + (time * 60 * 1000));
+  localStorage.setItem('expDate', expDate)
+  //let expDate = localStorage.getItem('expDate');
   //starts the timer when the value is given
   if (change != 0) { countdown(expDate); }
   //myDate is the calculations for the current time + the given value
@@ -95,14 +108,14 @@ function timeUpdate() {
   // document.getElementById("timeEnds").innerHTML = myDate.getHours();
   //gets the information for when the timer ends
 
-  let timesUp = expDate;
+
   let h = expDate.getHours();
   let m = expDate.getMinutes();
   let s = expDate.getSeconds();
 
   h = (h < 10) ? "0" + h : h;
   m = (m < 10) ? "0" + m : m;
-  s = (s < 10) ? "0" + s : s;
+  s = (s < 10) ? "0" + s : s; //sätter 0 framför ifall t.ex. 5 sekunder kvar
 
   document.querySelector("#timeEnds").innerText = `Time's up ${h}:${m}:${s}`;
   //shows when the timer ends
@@ -131,6 +144,7 @@ function countdown() {
     if (hours == 0 && minutes == 0 && seconds == 0) {
       alert("times up!")
       clearInterval(timer);
+      localStorage.removeItem('expDate');
     } //alerts when time is up
 
     hours = (hours < 10) ? "0" + hours : hours;
@@ -141,15 +155,8 @@ function countdown() {
   }
 
 }
-/*
 
 
-*/
-function timesUp() {
-
-  alert("times up!")
-
-}
 
 
 function theClock() {
