@@ -11,7 +11,23 @@ body{
     flex-direction: column;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
 }
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    src: url('../Fonts/MinecraftRegular-Bmg3.otf');
+}
 
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    font-weight: bold;
+    src: url('../Fonts/MinecraftBold-nMK1.otf');
+}
+
+p{
+    font-size:30px;
+    color: darkblue;
+}
 
 .asset{
     height: 100px;
