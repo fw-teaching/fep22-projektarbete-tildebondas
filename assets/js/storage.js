@@ -84,6 +84,10 @@ console.log("the screen resolution is " + width + "px * " + height + "px")
 localStorage.setItem('device', device);
 localStorage.setItem('browser', browser);
 localStorage.setItem('language', language);
+
+let played = localStorage.getItem('played');
+
+console.log('the user has played ' + played + " games")
 //saves the info to be able to "sell" it later :)
 
 /*
