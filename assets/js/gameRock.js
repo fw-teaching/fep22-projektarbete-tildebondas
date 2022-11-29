@@ -149,16 +149,34 @@ const computerCard = (evt) => {
 
         const clicked = evt.target.getAttribute('data-i');
 
-        assetC.src = choice[clicked].img
+        if (choice[clicked] === choice[0] ){
 
-        assetC.setAttribute('name', choice[clicked].name);
+            assetC.src = choice[2].img
+
+        assetC.setAttribute('name', choice[2].name);
+
+        }
+        if (choice[clicked] === choice[1] ){
+
+            assetC.src = choice[0].img
+
+        assetC.setAttribute('name', choice[0].name);
+
+        }
+        if (choice[clicked] === choice[2] ){
+
+            assetC.src = choice[1].img
+
+        assetC.setAttribute('name', choice[1].name);
+
+        }
+
 
 
         choiceComputer.appendChild(boxC);
         boxC.appendChild(assetC);
         
-        //rigs the game so that 3/6 of the time the computer automaticly wins
-        // 1/6 it ties and 2/6 the user wins :)
+        //rigs the game so that 2/6 of the time the computer auotmaticly wins
         
     }else{
 
