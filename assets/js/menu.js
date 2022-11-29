@@ -123,8 +123,8 @@ document.querySelector("#colorChanger").style.opacity = '0';
 
 
 //Öppnar meny med animation
-document.querySelector("#burgerIcon").addEventListener('click', () => {
-    console.log("menu")
+function menuToggle(){
+    console.log("menuToggle()")
 
     if (menu.style.visibility == "hidden") {
         menu.style.visibility = "visible";
@@ -138,7 +138,9 @@ document.querySelector("#burgerIcon").addEventListener('click', () => {
         menu.style.width = '0px';
         document.querySelector("#colorChanger").style.opacity = '0';
     }
-});
+}
+
+document.querySelector("#burgerIcon").addEventListener('click', menuToggle);
 
 const menuItems = [
     { name: "Homepage", url: "../homepage/index.html" },

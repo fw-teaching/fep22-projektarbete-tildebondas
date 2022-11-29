@@ -305,8 +305,16 @@ body {
     border: dashed 3px white;
 }
 
-#links a:hover {    
+#links a:hover {
     color: rgb(177, 177, 177);
     border: dashed 3px rgb(177, 177, 177);
 
+}
+
+#clickMe {
+    position: absolute;
+    text-align: center;
+    display: none;
+    margin-top: 5px;
+    font-weight: bold;
 }
