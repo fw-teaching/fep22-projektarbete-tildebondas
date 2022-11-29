@@ -163,7 +163,7 @@ function countdown() {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds; //sätter 0 framför ifall t.ex. 5 sekunder kvar
 
-    document.getElementById("countdownOut").innerHTML = `${hours}:${minutes}:${seconds}`;
+    document.getElementById("countdownOut").innerHTML = `Time left: ${hours}:${minutes}:${seconds}`;
   }
 
 }

@@ -124,5 +124,7 @@ function hideTime() {
   document.getElementById("howLong").style.display = 'none';
   document.querySelector("#hamburger").style.visibility = 'visible';
 
+  document.querySelector("#gameChoose").style.display = "block";
+
   sessionStorage.setItem('finishedSetup', "true");
 }

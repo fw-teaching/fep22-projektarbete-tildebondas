@@ -1,7 +1,5 @@
 #body{
-    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -11,6 +9,7 @@
     grid-template-columns: repeat(4,8rem);
     grid-template-rows: repeat(4,8rem);
     perspective: 800px;
+    margin: 30px;
 }
 
 #body div {

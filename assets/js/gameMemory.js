@@ -1,6 +1,6 @@
 console.log("hej")
 
-document.body.style.backgroundImage = "url(../assets/images/memory/memoryBackground.jpg)";
+document.body.style.backgroundImage = "url(../assets/images/memory/memoryBackground.png)";
 
 if (sessionStorage.getItem("finishedSetup") != "true") {
     alert("ERROR finishedSetup != \"true\"; Homepage skipped or new tab opened. Do not do this.")
