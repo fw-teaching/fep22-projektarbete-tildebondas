@@ -80,6 +80,9 @@ const generator = () => {
 
 }
 
+let bet = prompt('how much would you like to bet?');
+
+
 const randome = Math.floor(Math.random() * 3);
 
 const computerCard = () => {
@@ -128,23 +131,46 @@ const playerChoice = (evt) => {
     
 }
 
+
+
 const gameCheck = () => {
+
 
     const check1 = document.querySelector('.check1');
     const check2 = document.querySelector('.check2');
+    
+    
 
     if(check1.getAttribute('name') 
     === check2.getAttribute('win')){
         console.log("win");
+        console.log(amount);
+        localStorage.setItem('amount', amount + bet * 2);
+        amount += bet*2;
+        document.querySelector('#score').innerText = "You won " + bet*2;
+        
     }
     else if (check1.getAttribute('name') 
     === check2.getAttribute('tie')){
         console.log("tie");
+        console.log(amount);
+        document.querySelector('#score').innerText = "Tie";
+        
+        
+
     }
     else if (check1.getAttribute('name') 
     === check2.getAttribute('lose')){
         console.log("lose");
+        console.log(amount);
+        document.querySelector('#score').innerText = "You lose";
+        
+        amount - bet;
+        localStorage.setItem('amount', amount - bet);
     }
+
+    
+
 
 }
 
