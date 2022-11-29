@@ -7,6 +7,13 @@ const shear = {win:'papper', lose:'cobblestone', tie:'shear'};
 
 document.body.style.backgroundImage = "url(../assets/images/rockPapperScissors/backgroundHouse.png)";
 
+amount = parseInt(localStorage.getItem("amount"));
+
+let bet = 0;
+do{
+     bet = parseInt(window.prompt("how much would you like to bet? You still have " + amount));
+}while(isNaN(bet) || bet > amount || bet < 1);
+
 const getData = () => [
     {
         name: 'papper',
@@ -32,6 +39,7 @@ const getData = () => [
     }
 ]
 
+//the object of all the assets
 const choice = getData();
 
 const playerChoices = document.querySelector('.playerChoices');
@@ -40,7 +48,7 @@ const choiceP = document.querySelector('.choice');
 
 
 
-
+//Selects the html
 
 
 
@@ -52,7 +60,7 @@ const generator = () => {
 
     const boxGame = document.createElement('div');
     const assetGame = document.createElement('img');
-    
+
 
     choice.forEach(item => {
         const box = document.createElement('div');
@@ -65,7 +73,7 @@ const generator = () => {
         asset.setAttribute('name', item.name);
         asset.setAttribute('win', item.win);
         asset.setAttribute('data-i', i);
-        
+
         playerChoices.appendChild(box);
         box.appendChild(asset);
 
@@ -74,14 +82,18 @@ const generator = () => {
             computerCard();
             playerChoice(evt);
             gameCheck();
+            
+            playerChoices.classList.add('clicked');
 
         })
-        i++;
-    })
 
+        i++;
+        
+    })
+//generates the choices
 }
 
-let bet = prompt('how much would you like to bet?');
+
 
 
 const randome = Math.floor(Math.random() * 3);
@@ -107,7 +119,7 @@ const computerCard = () => {
     choiceComputer.appendChild(boxC);
     boxC.appendChild(assetC);
 
-
+//randomes the computers choice
 }
 
 const playerChoice = (evt) => {
@@ -129,7 +141,7 @@ const playerChoice = (evt) => {
 
     choiceP.appendChild(boxP);
     boxP.appendChild(assetP);
-    
+//displays your choice
 }
 
 
@@ -139,45 +151,44 @@ const gameCheck = () => {
 
     const check1 = document.querySelector('.check1');
     const check2 = document.querySelector('.check2');
-    
+
     
 
-    if(check1.getAttribute('name') 
-    === check2.getAttribute('win')){
+    if (check1.getAttribute('name')
+        === check2.getAttribute('win')) {
         console.log("win");
         console.log(amount);
         localStorage.setItem('amount', amount + bet * 2);
-        amount += bet*2;
-        document.querySelector('#score').innerText = "You won " + bet*2;
-        
+       
+        document.querySelector('#score').innerHTML = ("You won " + bet * 2);
+
     }
-    else if (check1.getAttribute('name') 
-    === check2.getAttribute('tie')){
+    else if (check1.getAttribute('name')
+        === check2.getAttribute('tie')) {
         console.log("tie");
         console.log(amount);
-        document.querySelector('#score').innerText = "Tie";
-        
-        
+        document.querySelector('#score').innerHTML = ("tie, but you still have " + amount);
+
 
     }
-    else if (check1.getAttribute('name') 
-    === check2.getAttribute('lose')){
+    else if (check1.getAttribute('name')
+        === check2.getAttribute('lose')) {
         console.log("lose");
         console.log(amount);
-        document.querySelector('#score').innerText = "You lose";
-        
-        amount - bet;
+        document.querySelector('#score').innerHTML = ("You lost -" + bet);
+
         localStorage.setItem('amount', amount - bet);
+        
     }
 
-  document.querySelector('#playAgain').addEventListener('click', () => {
-   
-    location.reload();
-    console.log('hudwahkuawih');
-  });
+//checks if you won, tie or lost
 
 
 }
 
+document.querySelector('#playAgain').addEventListener('click', () => {
+   window.location.reload();
+})
+//Reload the game
 generator();
 

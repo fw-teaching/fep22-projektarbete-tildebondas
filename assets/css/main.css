@@ -69,9 +69,10 @@ body {
     font-size: 40px;
     font-weight: bold;
     position: fixed;
+    right: 0;
     text-align: right;
     bottom: 0px;
-    width: 100%;
+    width: fit-content;
     text-shadow:
         -2px -2px 0 #000,
         2px -2px 0 #000,
@@ -138,7 +139,7 @@ body {
     text-align: right;
     top: 0;
     right: 0;
-    width: 100%;
+    width: fit-content;
     text-shadow:
         -2px -2px 0 #000,
         2px -2px 0 #000,
