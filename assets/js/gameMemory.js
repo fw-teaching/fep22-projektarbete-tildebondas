@@ -165,7 +165,7 @@ const cardCheck = (evt) => {
 const gameCheck = () =>{
     if (matched == 8){
         matched = 0;
-        if(record = null){
+        if(record = "null"){
             localStorage.setItem('record', attempts);
         }
         if(attempts < localStorage.getItem('record')){
