@@ -4,8 +4,7 @@ console.log("main.js init");
 //the function that checks the age and if underage exits the site with a promt
 let checkUser = new Boolean;
 function ageCheck() {
-  checkUser = localStorage.getItem('ageCheck', checkUser);
-  if (checkUser === true) {
+
 
     let ageCheck = confirm("Do you confirm that you are 18 or older?");
     if (ageCheck) {
@@ -21,7 +20,7 @@ function ageCheck() {
       localStorage.setItem('ageCheck', checkUser);
       window.close();
     }
-  }
+  
 
 }
 
@@ -29,14 +28,9 @@ let amount;
 
 function money() {
 
-  if (localStorage.getItem("amount") != null) {
-    amount = localStorage.getItem("amount")
-  }
-  else {
     amount = document.getElementById("moneyPlaceholder").value;
     amount = amount.replace(',', '.');
     amount = Number(amount);
-  }
 
   //replaces , wth .
 
