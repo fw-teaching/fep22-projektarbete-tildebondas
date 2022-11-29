@@ -72,11 +72,25 @@ div{
 }
 
 p{
-    font-size:30px;
-    color: rgb(166, 166, 177);
+    font-size:20px;
+    color: rgb(0, 0, 0);
 }
 
 .flipped,
 .matched{
     pointer-events: none;
+}
+.basicBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(27, 87, 27);
+    padding: 20px;
+    width: 30%;
+    border: solid 5px black;
+    box-shadow: 5px 5px 10px black;
+}
+h1{
+    font-size: 20px;
 }

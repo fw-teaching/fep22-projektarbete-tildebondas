@@ -4,19 +4,23 @@ console.log("main.js init");
 //the function that checks the age and if underage exits the site with a promt
 let checkUser = new Boolean;
 function ageCheck() {
-  let ageCheck = confirm("Do you confirm that you are 18 or older?");
-  if (ageCheck) {
-    alert("Welcome and have fun!")
-    checkUser = true;
-    localStorage.setItem('ageCheck', checkUser);
+  checkUser = localStorage.getItem('ageCheck', checkUser);
+  if (checkUser === true) {
+
+    let ageCheck = confirm("Do you confirm that you are 18 or older?");
+    if (ageCheck) {
+      alert("Welcome and have fun!")
+      checkUser = true;
+      localStorage.setItem('ageCheck', checkUser);
 
 
-  }
-  else {
-    alert("Underage gambling is not allowed!")
-    checkUser = false;
-    localStorage.setItem('ageCheck', checkUser);
-    window.close();
+    }
+    else {
+      alert("Underage gambling is not allowed!")
+      checkUser = false;
+      localStorage.setItem('ageCheck', checkUser);
+      window.close();
+    }
   }
 
 }
