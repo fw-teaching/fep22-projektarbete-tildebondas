@@ -54,13 +54,13 @@ body {
     padding: 15px 25px 15px 25px;
     border: none;
     cursor: pointer;
-    opacity: .7;
-    color: white;
+    color: rgb(180, 180, 180);
 }
 
 .button:hover {
     transition: .2s;
-    opacity: 1;
+    color: white;
+
 }
 
 #clockbox {
