@@ -73,6 +73,8 @@ const getLocation = () => {
   navigator.geolocation.getCurrentPosition(succes, error);
 }
 
+getLocation();
+
 let height = window.screen.height;
 let width = window.screen.width
 

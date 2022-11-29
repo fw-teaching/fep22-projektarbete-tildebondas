@@ -5,7 +5,6 @@ console.log("main.js init");
 let checkUser = new Boolean;
 function ageCheck() {
 
-
   let ageCheck = confirm("Do you confirm that you are 18 or older?");
   if (ageCheck) {
     alert("Welcome and have fun!")
