@@ -142,9 +142,11 @@ document.querySelector("#burgerIcon").addEventListener('click', () => {
 
 const menuItems = [
     { name: "Homepage", url: "../homepage/index.html" },
-    { name: "Gallery", url: "../pages/gallery.html" }
+    { name: "Gallery", url: "../pages/gallery.html" },
+    { name: "Memory", url: "../pages/gameMemory.html" },
+    { name: "C, P, S", url: "../pages/gameRock.html" }
 ];
 
 menuItems.forEach(elem => {
-    document.querySelector("#links").innerHTML += `<a href="${elem.url}">${elem.name}</a>`
+    document.querySelector("#links").innerHTML += `<a href="${elem.url}" target="_self">${elem.name}</a>`
 })
