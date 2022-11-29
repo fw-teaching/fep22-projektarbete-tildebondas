@@ -1,4 +1,4 @@
-body{
+#body{
     background-image: url(../images/rockPapperScissors/backgroundHouse.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -33,24 +33,26 @@ p{
     height: 100px;
 }
 .assetC{
-    height: 200px;
+
     padding-left: 15%;
 
 }
 .boxC{
     display: flex;
     justify-content: center;
+    height: 200px;
     
 }
 
 .assetP{
-    height: 200px;
+
     padding-left: 15%;
 
 }
 .boxP{
     display: flex;
     justify-content: center;
+    height: 200px;
     
 }
 
@@ -58,6 +60,7 @@ p{
     display: grid;
     grid-template-columns: repeat(3,8rem);
     perspective: 800px;
+    padding-left: 2.5%;
     
 }
 .box{
@@ -75,14 +78,6 @@ p{
     height: 200px;
     width: 300px;
 }
-.basicBox {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: rgb(27, 87, 27);
-    padding: 20px;
-    width: 30%;
-    border: solid 5px black;
-    box-shadow: 5px 5px 10px black;
+h1{
+    font-size: 25px;
 }

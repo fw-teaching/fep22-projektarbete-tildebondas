@@ -40,12 +40,7 @@ const choiceP = document.querySelector('.choice');
 
 
 
-const randomizer = () => {
-    const randomeGame = getData();
-    //it gets all the images for getData with them all in an array
-    randomeGame.sort(() => Math.random() - 0.5);
-    return randomeGame
-}
+
 
 
 
@@ -96,15 +91,14 @@ const computerCard = () => {
 
     boxC.classList = 'boxC';
     assetC.classList = 'assetC';
-    boxC.classList = 'check1';
+    assetC.classList = 'check1';
 
 
 
     assetC.src = choice[randome].img;
 
-    assetC.setAttribute('lose', choice[randome].lose);
-    assetC.setAttribute('tie', choice[randome].tie);
-    assetC.setAttribute('win', choice[randome].win);
+    assetC.setAttribute('name', choice[randome].name);
+
 
     choiceComputer.appendChild(boxC);
     boxC.appendChild(assetC);
@@ -119,7 +113,7 @@ const playerChoice = (evt) => {
 
     boxP.classList = 'boxC';
     assetP.classList = 'assetC';
-    boxP.classList = 'check2';
+    assetP.classList = 'check2';
 
     const clicked = evt.target.getAttribute('data-i');
 
@@ -131,6 +125,7 @@ const playerChoice = (evt) => {
 
     choiceP.appendChild(boxP);
     boxP.appendChild(assetP);
+    
 }
 
 const gameCheck = () => {
@@ -138,15 +133,15 @@ const gameCheck = () => {
     const check1 = document.querySelector('.check1');
     const check2 = document.querySelector('.check2');
 
-    if(check1.getAttribute('lose') 
+    if(check1.getAttribute('name') 
     === check2.getAttribute('win')){
         console.log("win");
     }
-    if (check1.getAttribute('tie') 
+    else if (check1.getAttribute('name') 
     === check2.getAttribute('tie')){
         console.log("tie");
     }
-    if (check1.getAttribute('win') 
+    else if (check1.getAttribute('name') 
     === check2.getAttribute('lose')){
         console.log("lose");
     }
