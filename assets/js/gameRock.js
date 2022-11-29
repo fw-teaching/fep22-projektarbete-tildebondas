@@ -143,7 +143,8 @@ const computerCard = (evt) => {
         choiceComputer.appendChild(boxC);
         boxC.appendChild(assetC);
         
-        //rigs the game :)
+        //rigs the game so that 3/6 of the time the computer automaticly wins
+        // 1/6 it ties and 2/6 the user wins :)
         
     }else{
 
