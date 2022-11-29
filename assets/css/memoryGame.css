@@ -77,7 +77,8 @@ p{
 }
 
 .flipped,
-.matched{
+.matched,
+.toggleCard{
     pointer-events: none;
 }
 

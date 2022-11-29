@@ -79,7 +79,7 @@ const generator = () => {
 
 
         box.addEventListener('click', (evt) => {
-            computerCard();
+            computerCard(evt);
             playerChoice(evt);
             gameCheck();
             
@@ -98,29 +98,7 @@ const generator = () => {
 
 const randome = Math.floor(Math.random() * 3);
 
-const computerCard = () => {
-
-
-
-    const boxC = document.createElement('div');
-    const assetC = document.createElement('img');
-
-    boxC.classList = 'boxC';
-    assetC.classList = 'assetC';
-    assetC.classList = 'check1';
-
-
-
-    assetC.src = choice[randome].img;
-
-    assetC.setAttribute('name', choice[randome].name);
-
-
-    choiceComputer.appendChild(boxC);
-    boxC.appendChild(assetC);
-
-//randomes the computers choice
-}
+const randomeish = Math.floor(Math.random() * 7);
 
 const playerChoice = (evt) => {
 
@@ -143,6 +121,53 @@ const playerChoice = (evt) => {
     boxP.appendChild(assetP);
 //displays your choice
 }
+
+const computerCard = (evt) => {
+
+    
+    if(randomeish < 3){
+        const boxC = document.createElement('div');
+        const assetC = document.createElement('img');
+    
+        boxC.classList = 'boxC';
+        assetC.classList = 'assetC';
+        assetC.classList = 'check1';
+    
+        const clicked = evt.target.getAttribute('data-i');
+    
+        assetC.src = choice[clicked].img
+    
+        assetC.setAttribute('name', choice[clicked].name);
+    
+    
+        choiceComputer.appendChild(boxC);
+        boxC.appendChild(assetC);
+        
+        //rigs the game :)
+        
+    }else{
+
+    const boxC = document.createElement('div');
+    const assetC = document.createElement('img');
+
+    boxC.classList = 'boxC';
+    assetC.classList = 'assetC';
+    assetC.classList = 'check1';
+
+
+
+    assetC.src = choice[randome].img;
+
+    assetC.setAttribute('name', choice[randome].name);
+
+
+    choiceComputer.appendChild(boxC);
+    boxC.appendChild(assetC);
+}
+//randomes the computers choice
+}
+
+
 
 
 
