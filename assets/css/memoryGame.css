@@ -1,26 +1,21 @@
 #body{
-    
-    background-image: url(../images/memory/memoryBackground.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: black;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: Minecraft, Arial, Helvetica, sans-serif;
-
 }
 
-section{
+#body section{
     display: grid;
     grid-template-columns: repeat(4,8rem);
     grid-template-rows: repeat(4,8rem);
     perspective: 800px;
 }
 
+#body div {
+    cursor: pointer;
+}
 
 .back{
     background-color: white;
@@ -53,25 +48,8 @@ section{
     transform: rotateY(180deg);
 }
 
-div{
-    cursor: pointer;
-}
 
-/* Site-wide styling here */
-@font-face {
-    /*https://www.fontspace.com/jdgraphics*/
-    font-family: 'Minecraft';
-    src: url('../Fonts/MinecraftRegular-Bmg3.otf');
-}
-
-@font-face {
-    /*https://www.fontspace.com/jdgraphics*/
-    font-family: 'Minecraft';
-    font-weight: bold;
-    src: url('../Fonts/MinecraftBold-nMK1.otf');
-}
-
-p{
+#body p{
     font-size:20px;
     
 }

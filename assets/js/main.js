@@ -6,31 +6,29 @@ let checkUser = new Boolean;
 function ageCheck() {
 
 
-    let ageCheck = confirm("Do you confirm that you are 18 or older?");
-    if (ageCheck) {
-      alert("Welcome and have fun!")
-      checkUser = true;
-      localStorage.setItem('ageCheck', checkUser);
+  let ageCheck = confirm("Do you confirm that you are 18 or older?");
+  if (ageCheck) {
+    alert("Welcome and have fun!")
+    checkUser = true;
+    localStorage.setItem('ageCheck', checkUser);
 
 
-    }
-    else {
-      alert("Underage gambling is not allowed!")
-      checkUser = false;
-      localStorage.setItem('ageCheck', checkUser);
-      window.close();
-    }
-  
-
+  }
+  else {
+    alert("Underage gambling is not allowed!")
+    checkUser = false;
+    localStorage.setItem('ageCheck', checkUser);
+    window.close();
+  }
 }
 
 let amount;
 
 function money() {
 
-    amount = document.getElementById("moneyPlaceholder").value;
-    amount = amount.replace(',', '.');
-    amount = Number(amount);
+  amount = document.getElementById("moneyPlaceholder").value;
+  amount = amount.replace(',', '.');
+  amount = Number(amount);
 
   //replaces , wth .
 
@@ -83,7 +81,9 @@ if (sessionStorage.getItem('finishedSetup') == "true") {
   document.querySelector("#hamburger").style.visibility = 'visible';
   document.getElementById("emeraldImage").style.display = 'block'; //Emerald counter
   document.getElementById("moneyNumber").innerText = `${localStorage.getItem('amount')}`;
-};
+}
+
+else localStorage.removeItem("expDate");
 
 function timeUpdate() {
   let select = document.getElementById('amountOfTime');
@@ -91,12 +91,6 @@ function timeUpdate() {
 
   document.getElementById('value').value = option.value;
   document.getElementById('text').value = option.text;
-
-
-
-
-
-
 
   change = document.getElementById('value').value = option.value;
 
@@ -108,9 +102,15 @@ function timeUpdate() {
   if (change == 5) { time = 120; }
   if (change == 6) { time = 150; }
 
-  if (localStorage.getItem('expDate') == null) expDate = new Date(new Date().getTime() + (time * 60 * 1000));
-  else expDate = new Date(localStorage.getItem('expDate'));
-  localStorage.setItem('expDate', expDate);
+  if (localStorage.getItem('expDate') == undefined) {
+    expDate = new Date(new Date().getTime() + (time * 60 * 1000))
+    localStorage.setItem('expDate', expDate);
+    console.log("date undefined")
+  }
+  else {
+    expDate = new Date(localStorage.getItem('expDate'))
+    console.log("date")
+  };
   //let expDate = localStorage.getItem('expDate');
   //starts the timer when the value is given
   if (change != 0) { countdown(expDate); }
@@ -128,7 +128,7 @@ function timeUpdate() {
   m = (m < 10) ? "0" + m : m;
   s = (s < 10) ? "0" + s : s; //sätter 0 framför ifall t.ex. 5 sekunder kvar
 
-  document.querySelector("#timeEnds").innerText = `Time's up ${h}:${m}:${s}`;
+  document.querySelector("#timeEnds").innerText = `Session ends ${h}:${m}:${s}`;
   //shows when the timer ends
 }
 
@@ -153,9 +153,11 @@ function countdown() {
     seconds = Math.floor((timeWhen % (1000 * 60)) / 1000);
 
     if (hours <= 0 && minutes <= 0 && seconds <= 0) {
-      alert("times up!")
+      alert("Times up!")
       clearInterval(timer);
       localStorage.removeItem('expDate');
+      sessionStorage.removeItem('finishedSetup')
+      window.open("../homepage/index.html", "_self");
     } //alerts when time is up
 
     hours = (hours < 10) ? "0" + hours : hours;
@@ -229,3 +231,7 @@ function closeWeekend() {
     window.open("../pages/closed.html", "_self");
   }
 }
+
+weekday = weekend.getDay();
+document.querySelector('#weekday').value = weekday;
+closeWeekend();

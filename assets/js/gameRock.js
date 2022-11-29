@@ -1,4 +1,9 @@
-console.log("hej")
+console.log("gameRock.js init")
+
+if (sessionStorage.getItem("finishedSetup") != "true") {
+    alert("ERROR finishedSetup != \"true\"; Homepage skipped or new tab opened. Do not do this.")
+    window.open("../homepage/index.html", "_self");
+}
 
 /* const cobblestone = {win:'shear', lose:'papper', tie:'cobblestone'};
 const papper = {win:'cobblestone', lose:'shear', tie:'papper'};
@@ -10,9 +15,18 @@ document.body.style.backgroundImage = "url(../assets/images/rockPapperScissors/b
 amount = parseInt(localStorage.getItem("amount"));
 
 let bet = 0;
-do{
-     bet = parseInt(window.prompt("how much would you like to bet? You still have " + amount));
-}while(isNaN(bet) || bet > amount || bet < 1);
+
+if (localStorage.getItem("amount") <= 0) {
+    alert("Money gone! Sucks to be you!");
+    sessionStorage.removeItem("finishedSetup");
+    window.open("../homepage/index.html", "_self");
+}
+
+else {
+    do {
+        bet = parseInt(window.prompt("how much would you like to bet? You still have " + amount));
+    } while (isNaN(bet) || bet > amount || bet < 1);
+}
 
 const getData = () => [
     {
@@ -82,15 +96,15 @@ const generator = () => {
             computerCard(evt);
             playerChoice(evt);
             gameCheck();
-            
+
             playerChoices.classList.add('clicked');
 
         })
 
         i++;
-        
+
     })
-//generates the choices
+    //generates the choices
 }
 
 
@@ -119,27 +133,27 @@ const playerChoice = (evt) => {
 
     choiceP.appendChild(boxP);
     boxP.appendChild(assetP);
-//displays your choice
+    //displays your choice
 }
 
 const computerCard = (evt) => {
 
-    
-    if(randomeish < 3){
+
+    if (randomeish < 2) {
         const boxC = document.createElement('div');
         const assetC = document.createElement('img');
-    
+
         boxC.classList = 'boxC';
         assetC.classList = 'assetC';
         assetC.classList = 'check1';
-    
+
         const clicked = evt.target.getAttribute('data-i');
-    
+
         assetC.src = choice[clicked].img
-    
+
         assetC.setAttribute('name', choice[clicked].name);
-    
-    
+
+
         choiceComputer.appendChild(boxC);
         boxC.appendChild(assetC);
         
@@ -148,24 +162,24 @@ const computerCard = (evt) => {
         
     }else{
 
-    const boxC = document.createElement('div');
-    const assetC = document.createElement('img');
+        const boxC = document.createElement('div');
+        const assetC = document.createElement('img');
 
-    boxC.classList = 'boxC';
-    assetC.classList = 'assetC';
-    assetC.classList = 'check1';
-
-
-
-    assetC.src = choice[randome].img;
-
-    assetC.setAttribute('name', choice[randome].name);
+        boxC.classList = 'boxC';
+        assetC.classList = 'assetC';
+        assetC.classList = 'check1';
 
 
-    choiceComputer.appendChild(boxC);
-    boxC.appendChild(assetC);
-}
-//randomes the computers choice
+
+        assetC.src = choice[randome].img;
+
+        assetC.setAttribute('name', choice[randome].name);
+
+
+        choiceComputer.appendChild(boxC);
+        boxC.appendChild(assetC);
+    }
+    //randomes the computers choice
 }
 
 
@@ -178,14 +192,16 @@ const gameCheck = () => {
     const check1 = document.querySelector('.check1');
     const check2 = document.querySelector('.check2');
 
-    
+
 
     if (check1.getAttribute('name')
         === check2.getAttribute('win')) {
         console.log("win");
         console.log(amount);
         localStorage.setItem('amount', amount + bet * 2);
-       
+
+        document.querySelector("#moneyNumber").innerText = localStorage.getItem("amount");
+
         document.querySelector('#score').innerHTML = ("You won " + bet * 2);
 
     }
@@ -204,16 +220,17 @@ const gameCheck = () => {
         document.querySelector('#score').innerHTML = ("You lost -" + bet);
 
         localStorage.setItem('amount', amount - bet);
-        
+
+        document.querySelector("#moneyNumber").innerText = localStorage.getItem("amount");
     }
 
-//checks if you won, tie or lost
+    //checks if you won, tie or lost
 
 
 }
 
 document.querySelector('#playAgain').addEventListener('click', () => {
-   window.location.reload();
+    window.location.reload();
 })
 //Reload the game
 generator();

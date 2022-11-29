@@ -10,10 +10,45 @@
     <script src="../assets/js/gameMemory.js" defer></script>
     <link rel="stylesheet" href="../assets/css/memoryGame.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/Emerald.png">
     <title>Memory</title>
 </head>
 
 <body>
+
+    <div id="TitleBox">
+        <p id="Title">CasinoCraft</p>
+        <div class="basicBox" id="hamburger">
+            <p id="burgerIcon">☰</p>
+            <div class="basicBox" id="menu">
+
+                <div id="links">
+                </div>
+
+                <div id="colorChanger">
+                    <label for="R">R</label>
+                    <input id="R" color="R" class="slider" type="range" min="0" max="255">
+                    <br>
+
+                    <label for="G">G</label>
+                    <input id="G" color="G" class="slider" type="range" min="0" max="255">
+                    <br>
+
+                    <label for="B">B</label>
+                    <input id="B" color="B" class="slider" type="range" min="0" max="255">
+
+                    <p>Select a theme</p>
+
+                    <input type="button" value="Reset">
+
+                    <select id="bgSelect">
+
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="body">
 
         <div class="basicBox">

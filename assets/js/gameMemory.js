@@ -1,6 +1,11 @@
 console.log("hej")
 
+document.body.style.backgroundImage = "url(../assets/images/memory/memoryBackground.jpg)";
 
+if (sessionStorage.getItem("finishedSetup") != "true") {
+    alert("ERROR finishedSetup != \"true\"; Homepage skipped or new tab opened. Do not do this.")
+    window.open("../homepage/index.html", "_self");
+}
 
 const section = document.querySelector('section');
 let attempts = 0;
