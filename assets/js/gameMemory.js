@@ -9,7 +9,7 @@ if (sessionStorage.getItem("finishedSetup") != "true") {
 
 const section = document.querySelector('section');
 let attempts = 0;
-let record = localStorage.getItem('record');
+let record = window.localStorage.getItem('record');
 let matched = 0;
 document.querySelector('.attemptsCounter').innerHTML = ("Attempts " + attempts + "<br> And your record is " + record);
 //the attempts counter
@@ -156,7 +156,7 @@ const cardCheck = (evt) => {
         //Adds and displays the number of attempts made so far
     }
 
-   
+   gameCheck();
     
 
 
@@ -165,11 +165,14 @@ const cardCheck = (evt) => {
 const gameCheck = () =>{
     if (matched == 8){
         matched = 0;
-        if(record = "null"){
-            localStorage.setItem('record', attempts);
+        console.log(matched)
+        if(record == null){
+            window.localStorage.setItem('record', 0);
+            record = attempts
+            window.localStorage.setItem('record', attempts);
         }
-        if(attempts < localStorage.getItem('record')){
-            localStorage.setItem('record', attempts);
+        if( attempts < record){
+            window.localStorage.setItem('record', attempts);
             alert('New record!')
         }
         alert('you won in ' + attempts + ' attempts')
@@ -186,4 +189,3 @@ const gameCheck = () =>{
 
 
 generator();
-setInterval(gameCheck, 100);

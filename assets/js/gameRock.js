@@ -235,7 +235,7 @@ const gameCheck = () => {
         === check2.getAttribute('lose')) {
         console.log("lose");
         console.log(amount);
-        document.querySelector('#score').innerHTML = ("You lost -" + bet);
+        document.querySelector('#score').innerHTML = ("You lost " + bet);
 
         localStorage.setItem('amount', amount - bet);
 
