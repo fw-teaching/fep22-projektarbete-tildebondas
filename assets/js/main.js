@@ -125,7 +125,7 @@ function timeUpdate() {
 
   h = (h < 10) ? "0" + h : h;
   m = (m < 10) ? "0" + m : m;
-  s = (s < 10) ? "0" + s : s; //sätter 0 framför ifall t.ex. 5 sekunder kvar
+  s = (s < 10) ? "0" + s : s; //sätter 0 framför ifall t.ex. 5 sekunder kvar, mer info på homepage.js theClock()
 
   document.querySelector("#timeEnds").innerText = `Session ends ${h}:${m}:${s}`;
   //shows when the timer ends
@@ -161,7 +161,7 @@ function countdown() {
 
     hours = (hours < 10) ? "0" + hours : hours;
     minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds; //sätter 0 framför ifall t.ex. 5 sekunder kvar
+    seconds = (seconds < 10) ? "0" + seconds : seconds; //sätter 0 framför ifall t.ex. 5 sekunder kvar, mer info på homepage.js theClock()
 
     document.getElementById("countdownOut").innerHTML = `Time left: ${hours}:${minutes}:${seconds}`;
   }

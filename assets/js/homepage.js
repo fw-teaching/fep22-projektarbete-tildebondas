@@ -46,8 +46,7 @@ function websiteLoad() {
     loadEverything();
   }
 
-  else
-  {
+  else {
     ageCheck();
   }
 }
@@ -123,6 +122,7 @@ function hideTime() {
   document.getElementById("amountOfTime").style.display = 'none';
   document.getElementById("howLong").style.display = 'none';
   document.querySelector("#hamburger").style.visibility = 'visible';
+  document.querySelector("#clickMe").style.display = "block";
 
   document.querySelector("#gameChoose").style.display = "block";
 
