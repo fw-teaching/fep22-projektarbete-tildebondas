@@ -5,6 +5,7 @@ const papper = {win:'cobblestone', lose:'shear', tie:'papper'};
 const shear = {win:'papper', lose:'cobblestone', tie:'shear'};
 */
 
+document.body.style.backgroundImage = "url(../assets/images/rockPapperScissors/backgroundHouse.png)";
 
 const getData = () => [
     {
