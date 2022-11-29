@@ -1,5 +1,10 @@
 console.log("hej")
 
+if (sessionStorage.getItem("finishedSetup") != "true") {
+    alert("ERROR finishedSetup != \"true\"; Homepage skipped or new tab opened. Do not do this.")
+    window.open("../homepage/index.html", "_self");
+}
+
 /* const cobblestone = {win:'shear', lose:'papper', tie:'cobblestone'};
 const papper = {win:'cobblestone', lose:'shear', tie:'papper'};
 const shear = {win:'papper', lose:'cobblestone', tie:'shear'};

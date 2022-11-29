@@ -40,16 +40,16 @@ function loadEverything() {
 
 //Funktion som körs när huvudsidan laddas
 function websiteLoad() {
-  weekday = weekend.getDay();
-  document.querySelector('#weekday').value = weekday;
-  closeWeekend();
 
   //Ifall man blivit färdig med "setuppen" skippar den och visar slutliga sidan
   if (sessionStorage.getItem('finishedSetup') === "true") {
     loadEverything();
   }
 
-  else ageCheck();
+  else
+  {
+    ageCheck();
+  }
 }
 
 websiteLoad();
@@ -84,8 +84,6 @@ function inputName() {
     console.log(fornamn, efternamn, username);
 
     sessionStorage.setItem('username', username);
-
-    console.log(document.cookie);
 
     return true;
   }

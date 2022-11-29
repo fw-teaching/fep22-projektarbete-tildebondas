@@ -243,11 +243,11 @@ body {
 #amountOfTime {
     margin: 0;
     padding: 0;
-    display:none;
+    display: none;
     width: fit-content;
     font-size: 20px;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
-    color:white;
+    color: white;
     border: 1;
     border-color: white;
     border-width: 3px;
@@ -296,10 +296,16 @@ body {
     flex-direction: column;
 }
 
-#links a{
+#links a {
     text-decoration: none;
     color: white;
     padding: 5px;
     margin: 5px;
     border: dashed 3px white;
+}
+
+#links a:hover {    
+    color: rgb(177, 177, 177);
+    border: dashed 3px rgb(177, 177, 177);
+
 }
