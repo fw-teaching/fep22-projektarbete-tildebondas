@@ -169,7 +169,11 @@ const gameCheck = () => {
         localStorage.setItem('amount', amount - bet);
     }
 
-    
+  document.querySelector('#playAgain').addEventListener('click', () => {
+   
+    location.reload();
+    console.log('hudwahkuawih');
+  });
 
 
 }
