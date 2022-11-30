@@ -319,3 +319,36 @@ body {
     margin-top: 5px;
     font-weight: bold;
 }
+
+@media (max-width: 900px) {
+    #Title {
+        font-size: 50px;
+        text-align: left;
+    }
+
+    #TitleBox {
+        justify-content: left;
+    }
+
+    #clockbox {
+        font-size: 20px;
+    }
+
+    #weekday {
+        font-size: 15px;
+    }
+
+    .countdown {
+        font-size: 20px;
+        left: 0;
+        bottom: 0;
+        top: auto;
+        right: auto;
+        text-align: left;
+    }
+    
+    #menu{
+        left:auto;
+        right: 5%;
+    }
+}

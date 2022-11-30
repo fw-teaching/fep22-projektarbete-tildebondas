@@ -96,3 +96,14 @@
     max-width: 75px;
     margin: 0 50px 0 50px ;
 }
+
+@media (max-width: 900px) {
+    
+    #clickMe {
+        font-size: 20px;
+    }
+
+    #dittNamn {
+        width: 400px;
+    }
+}
