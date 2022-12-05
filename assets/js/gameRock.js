@@ -5,9 +5,7 @@ if (sessionStorage.getItem("finishedSetup") != "true") {
     window.open("../homepage/index.html", "_self");
 }
 
-/* const cobblestone = {win:'shear', lose:'papper', tie:'cobblestone'};
-const papper = {win:'cobblestone', lose:'shear', tie:'papper'};
-const shear = {win:'papper', lose:'cobblestone', tie:'shear'};
+
 */
 
 document.body.style.backgroundImage = "url(../assets/images/rockPapperScissors/backgroundHouse.png)";
