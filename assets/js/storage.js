@@ -38,13 +38,14 @@ if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
   if(userAgent.match(/edg/i)){
       browser = "edge";
     }else if(userAgent.match(/firefox|fxios/i)){
-      browser = "firefox";
+      browser = "firefox";} 
+      else if(userAgent.match(/chrome|chromium|crios/i)){
+      browser = "chrome";
     }  else if(userAgent.match(/safari/i)){
-      browserName = "safari";
+      browser = "safari";
     }else if(userAgent.match(/opr\//i)){
       browser = "opera";
-    } else if(userAgent.match(/chrome|chromium|crios/i)){
-      browser = "chrome";
+    
     }else{
       browser="can't detect browser";
     }

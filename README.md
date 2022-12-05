@@ -1,5 +1,7 @@
 # Stomme för Casinoprojektet
 
+LINK TILL SIDAN: http://people.arcada.fi/~nybondae/fep22-projektarbete-tildebondas/homepage/
+
 ### Katalogstruktur:
 
 ```sh
@@ -28,3 +30,5 @@ README.md   # Den fil du läser just nu
     - Kom ihåg att lägga till länk till sidan i huvudmenyn
 
 - Det är tillåtet att ändra på strukturens uppbyggnad,  men projektet bör vara uppbyggt logiskt och konsekvent. Fritt fram att t.ex. byta namn på kataloger.
+
+LINK TILL SIDAN: http://people.arcada.fi/~nybondae/fep22-projektarbete-tildebondas/homepage/

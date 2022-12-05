@@ -5,9 +5,6 @@ if (sessionStorage.getItem("finishedSetup") != "true") {
     window.open("../homepage/index.html", "_self");
 }
 
-
-*/
-
 document.body.style.backgroundImage = "url(../assets/images/rockPapperScissors/backgroundHouse.png)";
 
 amount = parseInt(localStorage.getItem("amount"));
@@ -90,7 +87,7 @@ const generator = () => {
         box.appendChild(asset);
 
 
-        box.addEventListener('click', (evt) => {
+        asset.addEventListener('click', (evt) => {
             computerCard(evt);
             playerChoice(evt);
             gameCheck();
