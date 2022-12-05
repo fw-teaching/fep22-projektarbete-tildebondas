@@ -249,9 +249,7 @@ body {
     font-size: 20px;
     font-family: Minecraft, Arial, Helvetica, sans-serif;
     color: white;
-    border: 1;
-    border-color: white;
-    border-width: 3px;
+    border: solid 3px white;
     text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,

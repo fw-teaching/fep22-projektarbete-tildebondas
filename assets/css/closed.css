@@ -14,7 +14,7 @@
     font-size: 15px;
     padding: 15px 25px 15px 25px;
     color: white;
-    border: 1;
+    border: solid 5px black;
     cursor: pointer;
 }
 
