@@ -5,11 +5,11 @@ let visiting = localStorage.getItem('visited');
 
 if (localStorage.getItem('visited')) {
 
-    console.log("the user has visited this site " + visiting + " times");
-    visiting++;
-    localStorage.setItem('visited', visiting);
+  console.log("the user has visited this site " + visiting + " times");
+  visiting++;
+  localStorage.setItem('visited', visiting);
 } else {
-    localStorage.setItem('visited', 1);
+  localStorage.setItem('visited', 1);
 }
 //counts how many times the user has visited the site and stores it on local storage
 
@@ -19,38 +19,39 @@ console.log("the browser language is " + language)
 
 let device;
 
-if(/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)){
-    
-    console.log("user is on a mobile device");
-    device = "mobile";
-  }else{
-    
-    console.log("user is on a computer");
-    device = "computer"
-  }
+if (/Android|webOS|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent)) {
 
-  //checks if the navigator.userAgenets uses any of the keywords.
-  //the test checks the string and if ts a match it returns true
-  //the i makes it so it ignores lower and uppercase  letters and treats them the same
+  console.log("user is on a mobile device");
+  device = "mobile";
+} else {
 
-  let browser;
-  
-  if(userAgent.match(/edg/i)){
-      browser = "edge";
-    }else if(userAgent.match(/firefox|fxios/i)){
-      browser = "firefox";} 
-      else if(userAgent.match(/chrome|chromium|crios/i)){
-      browser = "chrome";
-    }  else if(userAgent.match(/safari/i)){
-      browser = "safari";
-    }else if(userAgent.match(/opr\//i)){
-      browser = "opera";
-    
-    }else{
-      browser="can't detect browser";
-    }
-  
-   console.log("the user is on " + browser)        
+  console.log("user is on a computer");
+  device = "computer"
+}
+
+//checks if the navigator.userAgenets uses any of the keywords.
+//the test checks the string and if ts a match it returns true
+//the i makes it so it ignores lower and uppercase  letters and treats them the same
+
+let browser;
+
+if (userAgent.match(/edg/i)) {
+  browser = "edge";
+} else if (userAgent.match(/firefox|fxios/i)) {
+  browser = "firefox";
+}
+else if (userAgent.match(/chrome|chromium|crios/i)) {
+  browser = "chrome";
+} else if (userAgent.match(/safari/i)) {
+  browser = "safari";
+} else if (userAgent.match(/opr\//i)) {
+  browser = "opera";
+
+} else {
+  browser = "can't detect browser";
+}
+
+console.log("the user is on " + browser)
 
 
 //checks if the key words match the navigator.userAgent and if it matches the correct phrase outputs the correct name
@@ -66,11 +67,11 @@ const getLocation = () => {
     console.log("The users latitude is " + coords.latitude)
     console.log("The users longitude is " + coords.longitude)
   }
-//if user does not allow
+  //if user does not allow
   const error = () => {
     console.log("user does now allow location")
   }
-  
+
   navigator.geolocation.getCurrentPosition(succes, error);
 }
 
