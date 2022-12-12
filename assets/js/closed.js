@@ -17,9 +17,9 @@ function timerOpen() {
     let m = timerGet.getMinutes();
     let s = timerGet.getSeconds();
 
-    h = nextMonday * 24 - h;
-    m = 60 - m;
-    s = 60 - s;
+    h = nextMonday * 24 - h - 1;
+    m = 60 - m - 1;
+    s = 60 - s - 1;
 
     let output = `${h}h ${m}m ${s}s until opening`
 
