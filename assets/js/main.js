@@ -17,7 +17,7 @@ function ageCheck() {
     alert("Underage gambling is not allowed!")
     checkUser = false;
     localStorage.setItem('ageCheck', checkUser);
-    window.location.replace("https://www.youtube.com/watch?v=QE0daJEjKps");
+    window.open("../pages/ageClosed.html", "_self");
 
   }
 }
