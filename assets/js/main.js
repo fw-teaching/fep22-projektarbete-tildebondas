@@ -217,6 +217,7 @@ function theDate() {
 //Checkar ifall weekday har värdet veckoslut
 function isWeekend() {
   if (weekday == 0 || weekday == 6) return true;
+  return false;
 }
 
 //Checkar varje sekund om det är veckoslut
