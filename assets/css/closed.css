@@ -1,0 +1,24 @@
+#closedMsg {
+    margin-top: 5%;
+}
+
+#buttonBack {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    background-color: rgb(57, 145, 57);
+    border-radius: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 15px 25px 15px 25px;
+    color: white;
+    border: solid 5px black;
+    cursor: pointer;
+}
+
+#timeLeft{
+    font-size: 30px;
+    font-weight: bold;
+}

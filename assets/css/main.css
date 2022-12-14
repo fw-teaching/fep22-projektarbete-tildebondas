@@ -1,4 +1,352 @@
 /* Site-wide styling here */
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    src: url('../Fonts/MinecraftRegular-Bmg3.otf');
+}
+
+@font-face {
+    /*https://www.fontspace.com/jdgraphics*/
+    font-family: 'Minecraft';
+    font-weight: bold;
+    src: url('../Fonts/MinecraftBold-nMK1.otf');
+}
+
 body {
-    background-color: cornsilk; /* Bara för att testa, ÄNDRA eller ta bort! */
+    padding: 0;
+    margin: 0;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-image: url(../images/backgrounds/creeper-g7bf30bcb7_1920_GREEN.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    cursor: default;
+}
+
+
+.basicBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(27, 87, 27);
+    padding: 20px;
+    width: 30%;
+    border: solid 5px black;
+    box-shadow: 5px 5px 10px black;
+}
+
+.button {
+    margin: 5px;
+    text-align: center;
+    background-color: rgb(133, 133, 133);
+    border-radius: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 15px 25px 15px 25px;
+    border: none;
+    cursor: pointer;
+    color: rgb(180, 180, 180);
+}
+
+.button:hover {
+    transition: .2s;
+    color: white;
+
+}
+
+#clockbox {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    text-align: right;
+    bottom: 0px;
+    width: fit-content;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+}
+
+#weekday {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: 0;
+    width: fit-content;
+    font-size: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+
+#clock {
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+#date {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#Title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+    text-shadow:
+        -5px -5px 0 #000,
+        5px -5px 0 #000,
+        -5px 5px 0 #000,
+        5px 5px 0 #000,
+        7px 7px 7px black;
+    ;
+    margin: 2% 0 0 0;
+}
+
+#TitleBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.invisible input {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+}
+
+#money {
+    display: grid;
+    font-size: 30px;
+    font-weight: bold;
+    position: fixed;
+    text-align: left;
+    top: 0;
+    left: 0;
+    width: 105px;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        5px 5px 10px black;
+}
+
+#moneyNumber {
+    display: block;
+    text-align: center;
+    margin-top: 45px;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+}
+
+#emeraldImage {
+    display: none;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 85px;
+    height: auto;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.timer {
+    margin-right: 20px;
+}
+
+#timeEnds {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.slider {
+    appearance: none;
+    opacity: .7;
+    height: 10px;
+    width: 200px;
+    transition: opacity .1s;
+    background: #d3d3d3;
+    outline: none;
+    margin-left: 40px;
+}
+
+#colorChanger label {
+    font-size: 20px;
+    position: absolute;
+    left: 15px;
+    margin-top: 6px;
+}
+
+#colorChanger p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 25px;
+    background: rgb(133, 133, 133);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 25px;
+    background: rgb(133, 133, 133);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+
+#amountOfTime {
+    margin: 0;
+    padding: 0;
+    display: none;
+    width: fit-content;
+    font-size: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    color: white;
+    border: solid 3px white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    box-shadow: 0 0 0 0;
+}
+
+#hamburger {
+    visibility: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    width: 30px;
+    height: 35px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px black;
+    opacity: .7;
+}
+
+#burgerIcon {
+    margin: 0;
+    cursor: pointer;
+}
+
+#hamburger:hover {
+    transition: opacity .2s;
+    opacity: 1;
+}
+
+#menu {
+    width: 0;
+    position: absolute;
+    transition: width .2s;
+    z-index: 1;
+    padding: 5px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px black;
+}
+
+#links {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#links a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border: dashed 3px white;
+}
+
+#links a:hover {
+    color: rgb(177, 177, 177);
+    border: dashed 3px rgb(177, 177, 177);
+
+}
+
+#clickMe {
+    position: absolute;
+    text-align: center;
+    display: none;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    #Title {
+        font-size: 50px;
+        text-align: left;
+    }
+
+    #TitleBox {
+        justify-content: left;
+    }
+
+    #clockbox {
+        font-size: 20px;
+    }
+
+    #weekday {
+        font-size: 15px;
+    }
+
+    .countdown {
+        font-size: 20px;
+        left: 0;
+        bottom: 0;
+        top: auto;
+        right: auto;
+        text-align: left;
+    }
+    
+    #menu{
+        left:auto;
+        right: 5%;
+    }
 }

@@ -1,0 +1,109 @@
+#website-output {
+    display: none;
+}
+
+#dittNamn {
+    margin-top: 5%;
+    width: 500px;
+}
+
+#errorMsg {
+    display: none;
+    margin-top: -5px;
+    border: solid 5px black;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 0px 0px black;
+}
+
+#name-check {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 5%;
+}
+
+#name-check input {
+    padding: 10px;
+    margin: 5px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+}
+
+#username {
+    font-weight: bold;
+    font-size: 30px;
+    color: crimson;
+    margin-top: 0;
+}
+
+#howLong {
+    margin-bottom: 0;
+    display: none;
+}
+
+#howMany {
+    margin-bottom: 0;
+}
+
+#name-box {
+    margin-bottom: 0;
+}
+
+#moneyPlaceholder {
+    width: 100px;
+    font-size: 20px;
+    font-family: Minecraft, Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-width: 3px;
+    text-align: center;
+}
+
+#okButt {
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+}
+
+#gameChoose {
+    display: none;
+}
+
+#dittNamn a {
+    width: fit-content;
+}
+
+.images {
+    width: 200px;
+    height: 120px;
+}
+
+#games {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.game {
+    max-width: 75px;
+    margin: 0 50px 0 50px ;
+}
+
+@media (max-width: 900px) {
+    
+    #clickMe {
+        font-size: 20px;
+    }
+
+    #dittNamn {
+        width: 400px;
+    }
+}

@@ -1,0 +1,66 @@
+#body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#body p{
+    font-size:30px;
+    color: darkblue;
+}
+
+.asset{
+    height: 100px;
+}
+.assetC{
+
+    padding-left: 15%;
+
+}
+.boxC{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    
+}
+
+.assetP{
+
+    padding-left: 15%;
+
+}
+.boxP{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    
+}
+
+.playerChoices{
+    display: grid;
+    grid-template-columns: repeat(3,8rem);
+    perspective: 800px;
+    padding-left: 2.5%;
+    
+}
+.box{
+    cursor: pointer;
+}
+
+.choiceComputer{
+
+    height: 200px;
+    width: 300px;
+
+}
+.choice{
+
+    height: 200px;
+    width: 300px;
+}
+h1{
+    font-size: 25px;
+}
+.clicked{
+    pointer-events: none;
+}

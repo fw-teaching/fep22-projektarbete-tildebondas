@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/homepage.css">
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
+    <script src="../assets/js/storage.js" defer></script>
+    <script src="../assets/js/homepage.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="../assets/images/Emerald.png">
+    <title>CasinoCraft</title>
+</head>
+
+<body>
+    <div id="TitleBox">
+        <p id="Title">CasinoCraft</p>
+        <div class="basicBox" id="hamburger">
+            <p id="burgerIcon">☰</p>
+            <p id="clickMe">↑ Click me!</p>
+            <div class="basicBox" id="menu">
+
+                <div id="links">
+
+                </div>
+
+                <div id="colorChanger">
+                    <label for="R">R</label>
+                    <input id="R" color="R" class="slider" type="range" min="0" max="255">
+                    <br>
+
+                    <label for="G">G</label>
+                    <input id="G" color="G" class="slider" type="range" min="0" max="255">
+                    <br>
+
+                    <label for="B">B</label>
+                    <input id="B" color="B" class="slider" type="range" min="0" max="255">
+
+                    <p>Select a theme</p>
+
+                    <input type="button" value="Reset">
+
+                    <select id="bgSelect">
+
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="basicBox" id="name-check">
+        <input id="fornamn" placeholder="First name">
+        <input id="efternamn" placeholder="Last name">
+        <button class="button" id="buttonEnter">ENTER</button>
+    </div>
+    <p class="basicBox" id="errorMsg">Fill both fields!</p>
+
+    <div id="website-output">
+
+        <div class="basicBox" id="dittNamn">
+            <p id="name-box"></p>
+            <p class="rainbow-text" id="username"></p>
+
+            <p id="howMany">How many emeralds would you like to put in?</p>
+            <input id="moneyPlaceholder" placeholder="Amount" onkeypress="return numberCheck(event)">
+            <input class="button" id="okButt" type="button" value="OK">
+
+            <p id="howLong">How long would you like to play?</p>
+
+            <select class="basicBox" id="amountOfTime">
+                <option value="0">Time</option>
+                <option value="1">15min</option>
+                <option value="2">30min</option>
+                <option value="3">1h</option>
+                <option value="4">1h 30m</option>
+                <option value="5">2h</option>
+                <option value="6">2h 30m</option>
+            </select>
+            <div id="gameChoose">
+                <p>Choose a game:</p>
+
+                <div id="games">
+                    <p class="game">Memory</p>
+                    <p class="game">C, P, S</p>
+                </div>
+
+                <a href="../pages/gameMemory.html"><img class="images"
+                        src="../assets/images/memory/memoryBackground.png" alt="gameMemory"></a>
+                <a href="../pages/gameRock.html"><img class="images"
+                        src="../assets/images/rockPapperScissors/backgroundHouse.png" alt="gameRock"></a>
+            </div>
+        </div>
+
+
+        <!--För amountOfTime-->
+        <div class="invisible">
+            <input title="indexPlaceholder" type="text" id="value">
+            <input title="textPlaceholder" type="text" id="text">
+        </div>
+
+
+        <div id="money">
+            <div id="moneyNumber"></div>
+            <img id="emeraldImage" alt="Emeralds" src="../assets/images/Emerald.png">
+        </div>
+
+
+        <div class="countdown">
+            <div id="timeEnds"></div>
+            <div class="timer">
+                <span id="countdownOut"></span>
+                <span id="minutes"></span>
+                <span id="seconds"></span>
+            </div>
+        </div>
+
+
+        <section id="clockbox">
+            <select id="weekday" onchange="theDate()">
+                <option value="0">Söndag</option>
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+            </select>
+            <div id="clock"></div>
+            <div id="date"></div>
+        </section>
+
+    </div>
+</body>
+
+</html>

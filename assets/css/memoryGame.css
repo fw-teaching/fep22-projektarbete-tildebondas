@@ -1,0 +1,64 @@
+#body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#body section{
+    display: grid;
+    grid-template-columns: repeat(4,8rem);
+    grid-template-rows: repeat(4,8rem);
+    perspective: 800px;
+    margin: 30px;
+}
+
+#body div {
+    cursor: pointer;
+}
+
+.back{
+    background-color: white;
+    backface-visibility: hidden;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    
+}
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s cubic-bezier(0,.97,.94,.04);
+
+    
+}
+
+.face,
+.back{
+    position: absolute;
+    pointer-events: none;
+}
+
+
+.toggleCard{
+    transform: rotateY(180deg);
+}
+
+.cardStay{
+    transform: rotateY(180deg);
+}
+
+
+#body p{
+    font-size:20px;
+    
+}
+
+.flipped,
+.matched,
+.toggleCard{
+    pointer-events: none;
+}
+
+h1{
+    font-size: 25px;
+}
